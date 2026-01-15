@@ -1,6 +1,8 @@
 package lobby.lobby.listeners;
 
 import lobby.lobby.Lobby;
+import lobby.lobby.data.AdminDataManager;
+import lobby.lobby.data.StaffDataManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -28,6 +30,8 @@ public class LobbyJoinListener implements Listener {
             giveLobbyItems(player);
             // Set scoreboard for player
             plugin.getScoreboardManager().setScoreboard(player);
+            // Set admin prefix if applicable
+            updateAdminDisplayName(player);
         }
     }
 
@@ -42,6 +46,8 @@ public class LobbyJoinListener implements Listener {
             giveLobbyItems(player);
             // Set scoreboard for player
             plugin.getScoreboardManager().setScoreboard(player);
+            // Set admin prefix if applicable
+            updateAdminDisplayName(player);
 
             // Stop playtime tracking if coming from game world
             if (fromWorld.getName().equalsIgnoreCase("world")) {
@@ -90,5 +96,25 @@ public class LobbyJoinListener implements Listener {
         player.getInventory().setItem(1, profileItem);
 
         player.sendMessage("§aWelcome to the lobby!");
+    }
+
+    /**
+     * Update player's display name (TAB list) based on admin/staff status
+     * Priority: Admin > Staff > Normal
+     */
+    private void updateAdminDisplayName(Player player) {
+        AdminDataManager adminManager = plugin.getAdminDataManager();
+        StaffDataManager staffManager = plugin.getStaffDataManager();
+
+        if (adminManager.isAdmin(player)) {
+            // Set [Admin] prefix in TAB list (highest priority)
+            player.setPlayerListName(AdminDataManager.ADMIN_PREFIX + player.getName());
+        } else if (staffManager.isStaff(player)) {
+            // Set [Staff] prefix in TAB list
+            player.setPlayerListName(StaffDataManager.STAFF_PREFIX + player.getName());
+        } else {
+            // Reset to normal name
+            player.setPlayerListName(player.getName());
+        }
     }
 }

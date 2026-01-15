@@ -6,10 +6,14 @@ import org.bukkit.scoreboard.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 public class LobbyScoreboardManager {
 
     private final Lobby plugin;
+    private final Map<UUID, String> lastTimeValue = new HashMap<>();
 
     public LobbyScoreboardManager(Lobby plugin) {
         this.plugin = plugin;
@@ -28,23 +32,18 @@ public class LobbyScoreboardManager {
 
         // Empty line at top
         Score emptyLine1 = objective.getScore("§7");
-        emptyLine1.setScore(10);
+        emptyLine1.setScore(3);
 
-        // Current time
-        Score timeLabel = objective.getScore("§f時刻: §e--:--");
-        timeLabel.setScore(9);
-
-        // Empty line
-        Score emptyLine2 = objective.getScore("§6");
-        emptyLine2.setScore(8);
-
-        // Play time
-        Score playTimeLabel = objective.getScore("§fプレイ時間: §b--:--:--");
-        playTimeLabel.setScore(7);
+        // Current time (placeholder)
+        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
+        String currentTime = timeFormat.format(new Date());
+        Score timeScore = objective.getScore("§f時刻: §e" + currentTime);
+        timeScore.setScore(2);
+        lastTimeValue.put(player.getUniqueId(), currentTime);
 
         // Empty line at bottom
-        Score emptyLine3 = objective.getScore("§5");
-        emptyLine3.setScore(6);
+        Score emptyLine2 = objective.getScore("§6");
+        emptyLine2.setScore(1);
 
         player.setScoreboard(scoreboard);
     }
@@ -63,29 +62,26 @@ public class LobbyScoreboardManager {
         SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
         String currentTime = timeFormat.format(new Date());
 
-        // Get play time
-        long playTimeSeconds = plugin.getPlayTimeManager().getBedwarsPlayTime(player.getUniqueId());
-        String playTime = formatPlayTime(playTimeSeconds);
+        // Get the last time value for this player
+        String lastTime = lastTimeValue.get(player.getUniqueId());
 
-        // Update scores
-        scoreboard.resetScores("§f時刻: §e--:--");
-        Score timeScore = objective.getScore("§f時刻: §e" + currentTime);
-        timeScore.setScore(9);
+        // Only update if the time has changed
+        if (lastTime != null && !lastTime.equals(currentTime)) {
+            // Remove old time entry
+            scoreboard.resetScores("§f時刻: §e" + lastTime);
 
-        scoreboard.resetScores("§fプレイ時間: §b--:--:--");
-        Score playTimeScore = objective.getScore("§fプレイ時間: §b" + playTime);
-        playTimeScore.setScore(7);
-    }
+            // Add new time entry
+            Score timeScore = objective.getScore("§f時刻: §e" + currentTime);
+            timeScore.setScore(2);
 
-    /**
-     * Format play time as HH:MM:SS
-     */
-    private String formatPlayTime(long seconds) {
-        long hours = seconds / 3600;
-        long minutes = (seconds % 3600) / 60;
-        long secs = seconds % 60;
-
-        return String.format("%02d:%02d:%02d", hours, minutes, secs);
+            // Update stored value
+            lastTimeValue.put(player.getUniqueId(), currentTime);
+        } else if (lastTime == null) {
+            // First update, just set the score
+            Score timeScore = objective.getScore("§f時刻: §e" + currentTime);
+            timeScore.setScore(2);
+            lastTimeValue.put(player.getUniqueId(), currentTime);
+        }
     }
 
     /**
@@ -96,5 +92,7 @@ public class LobbyScoreboardManager {
         if (manager != null) {
             player.setScoreboard(manager.getNewScoreboard());
         }
+        // Clean up stored time value
+        lastTimeValue.remove(player.getUniqueId());
     }
 }
