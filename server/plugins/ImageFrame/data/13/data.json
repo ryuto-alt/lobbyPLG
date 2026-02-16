@@ -1,0 +1,44 @@
+{
+  "type": "imageframe:url_static",
+  "index": 13,
+  "name": "photo12",
+  "url": "https://cdn.discordapp.com/attachments/1052211179281465395/1459193046062076088/unnamed.jpg?ex\u003d696262ec\u0026is\u003d6961116c\u0026hm\u003da2409be1acb887478d4be4b90c7e57ad19e8937381be833efc6962ba49976310\u0026",
+  "width": 3,
+  "height": 2,
+  "ditheringType": "nearest-color",
+  "creator": "bc8069af-a431-490c-9659-7b85d41933d2",
+  "hasAccess": {},
+  "creationTime": 1767969202146,
+  "mapdata": [
+    {
+      "mapid": 106,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 107,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 108,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 109,
+      "image": "3.png",
+      "markers": []
+    },
+    {
+      "mapid": 110,
+      "image": "4.png",
+      "markers": []
+    },
+    {
+      "mapid": 111,
+      "image": "5.png",
+      "markers": []
+    }
+  ]
+}

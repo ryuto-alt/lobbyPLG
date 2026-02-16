@@ -1,0 +1,21 @@
+displayName: オーケストラ
+worldFolder: Orchestra
+enabled: true
+setupComplete: false
+endMode:
+  borderSize: 234.0
+  centerX: 0.0
+  centerZ: 0.0
+  shrinkSpeed: 1.0
+  finalSize: 10.0
+lobbySpawn:
+  world: Orchestra
+  x: 0.48937757674856447
+  y: 118.0
+  z: -0.5932441407744794
+  yaw: 0.34982044
+  pitch: 1.5037992
+teams: {}
+generators: {}
+shops: {}
+upgradeShops: {}

@@ -1,0 +1,1059 @@
+package myplg.myplg.gui;
+
+import myplg.myplg.PvPGame;
+import myplg.myplg.Team;
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+public class ShopGUI {
+    private final PvPGame plugin;
+
+    // Team name to wool color mapping
+    private static final Map<String, Material> TEAM_WOOL_MAP = new HashMap<>();
+    private static final Map<String, Material> TEAM_GLASS_MAP = new HashMap<>();
+
+    static {
+        TEAM_WOOL_MAP.put("アクア", Material.CYAN_WOOL);
+        TEAM_WOOL_MAP.put("イエロー", Material.YELLOW_WOOL);
+        TEAM_WOOL_MAP.put("ブルー", Material.BLUE_WOOL);
+        TEAM_WOOL_MAP.put("ホワイト", Material.WHITE_WOOL);
+        TEAM_WOOL_MAP.put("グレー", Material.GRAY_WOOL);
+        TEAM_WOOL_MAP.put("ピンク", Material.PINK_WOOL);
+        TEAM_WOOL_MAP.put("グリーン", Material.GREEN_WOOL);
+        TEAM_WOOL_MAP.put("レッド", Material.RED_WOOL);
+
+        TEAM_GLASS_MAP.put("アクア", Material.CYAN_STAINED_GLASS);
+        TEAM_GLASS_MAP.put("イエロー", Material.YELLOW_STAINED_GLASS);
+        TEAM_GLASS_MAP.put("ブルー", Material.BLUE_STAINED_GLASS);
+        TEAM_GLASS_MAP.put("ホワイト", Material.WHITE_STAINED_GLASS);
+        TEAM_GLASS_MAP.put("グレー", Material.GRAY_STAINED_GLASS);
+        TEAM_GLASS_MAP.put("ピンク", Material.PINK_STAINED_GLASS);
+        TEAM_GLASS_MAP.put("グリーン", Material.GREEN_STAINED_GLASS);
+        TEAM_GLASS_MAP.put("レッド", Material.RED_STAINED_GLASS);
+    }
+
+    public ShopGUI(PvPGame plugin) {
+        this.plugin = plugin;
+    }
+
+    public void openMainShop(Player player) {
+        Inventory inv = Bukkit.createInventory(null, 45, "§6§lショップ - メイン");
+
+        // Get player's team
+        String playerTeamName = plugin.getGameManager().getPlayerTeam(player.getUniqueId());
+        Material woolType = Material.WHITE_WOOL;
+        String woolColorName = "白";
+
+        if (playerTeamName != null) {
+            woolType = TEAM_WOOL_MAP.getOrDefault(playerTeamName, Material.WHITE_WOOL);
+            woolColorName = getWoolColorName(playerTeamName);
+        }
+
+        // Fill with gray glass panes for decoration
+        ItemStack grayPane = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
+        ItemMeta grayMeta = grayPane.getItemMeta();
+        if (grayMeta != null) {
+            grayMeta.setDisplayName(" ");
+            grayPane.setItemMeta(grayMeta);
+        }
+        for (int i = 0; i < 45; i++) {
+            inv.setItem(i, grayPane);
+        }
+
+        // Row 0: 4 Category buttons (slots 1, 3, 5, 7)
+        // Blocks category (slot 1)
+        ItemStack blocks = new ItemStack(Material.WHITE_WOOL);
+        ItemMeta blocksMeta = blocks.getItemMeta();
+        if (blocksMeta != null) {
+            blocksMeta.setDisplayName("§e§lブロック");
+            blocksMeta.setLore(Arrays.asList(
+                "§7羊毛、木材、ガラス、黒曜石",
+                "§aクリックして詳細を表示"
+            ));
+            blocks.setItemMeta(blocksMeta);
+        }
+        inv.setItem(1, blocks);
+
+        // Equipment category (slot 3) - weapons + armor
+        ItemStack equipment = new ItemStack(Material.IRON_SWORD);
+        ItemMeta equipmentMeta = equipment.getItemMeta();
+        if (equipmentMeta != null) {
+            equipmentMeta.setDisplayName("§c§l装備");
+            equipmentMeta.addItemFlags(org.bukkit.inventory.ItemFlag.HIDE_ATTRIBUTES);
+            equipmentMeta.setLore(Arrays.asList(
+                "§7剣、銃、防具",
+                "§aクリックして詳細を表示"
+            ));
+            equipment.setItemMeta(equipmentMeta);
+        }
+        inv.setItem(3, equipment);
+
+        // Enhancement category (slot 5) - potions + special items
+        ItemStack enhancement = new ItemStack(Material.POTION);
+        ItemMeta enhancementMeta = enhancement.getItemMeta();
+        if (enhancementMeta != null) {
+            enhancementMeta.setDisplayName("§d§l強化");
+            enhancementMeta.setLore(Arrays.asList(
+                "§7ポーション、特殊アイテム",
+                "§aクリックして詳細を表示"
+            ));
+            enhancement.setItemMeta(enhancementMeta);
+        }
+        inv.setItem(5, enhancement);
+
+        // Tools category (slot 7)
+        ItemStack tools = new ItemStack(Material.GOLDEN_APPLE);
+        ItemMeta toolsMeta = tools.getItemMeta();
+        if (toolsMeta != null) {
+            toolsMeta.setDisplayName("§6§l道具");
+            toolsMeta.setLore(Arrays.asList(
+                "§7金リンゴ、TNT、斧など",
+                "§aクリックして詳細を表示"
+            ));
+            tools.setItemMeta(toolsMeta);
+        }
+        inv.setItem(7, tools);
+
+        // ========== Quick Buy - Vertical layout with gap ==========
+        // Row 1 is empty (gray glass), items start at Row 2
+
+        // Column 1 (under ブロック): slots 19, 28
+        // Quick buy: Wool x16
+        ItemStack quickWool = new ItemStack(woolType, 16);
+        ItemMeta quickWoolMeta = quickWool.getItemMeta();
+        if (quickWoolMeta != null) {
+            quickWoolMeta.setDisplayName("§f" + woolColorName + "の羊毛");
+            quickWoolMeta.setLore(Arrays.asList(
+                "§7コスト: §f鉄 4個",
+                "",
+                "§eクリックして購入！"
+            ));
+            quickWool.setItemMeta(quickWoolMeta);
+        }
+        inv.setItem(19, quickWool);
+
+        // Quick buy: Oak Planks x10
+        ItemStack quickPlanks = new ItemStack(Material.OAK_PLANKS, 10);
+        ItemMeta quickPlanksMeta = quickPlanks.getItemMeta();
+        if (quickPlanksMeta != null) {
+            quickPlanksMeta.setDisplayName("§fオークの木材");
+            quickPlanksMeta.setLore(Arrays.asList(
+                "§7コスト: §6ゴールド 6個",
+                "",
+                "§eクリックして購入！"
+            ));
+            quickPlanks.setItemMeta(quickPlanksMeta);
+        }
+        inv.setItem(28, quickPlanks);
+
+        // Column 2 (under 装備): slots 21, 30
+        // Quick buy: Stone Sword
+        ItemStack stoneSword = new ItemStack(Material.STONE_SWORD);
+        ItemMeta stoneSwordMeta = stoneSword.getItemMeta();
+        if (stoneSwordMeta != null) {
+            stoneSwordMeta.setDisplayName("§f石の剣");
+            stoneSwordMeta.addItemFlags(org.bukkit.inventory.ItemFlag.HIDE_ATTRIBUTES);
+            stoneSwordMeta.setLore(Arrays.asList(
+                "§7コスト: §f鉄 10個",
+                "",
+                "§eクリックして購入！"
+            ));
+            stoneSword.setItemMeta(stoneSwordMeta);
+        }
+        inv.setItem(21, stoneSword);
+
+        // Quick buy: Iron Sword
+        ItemStack ironSword = new ItemStack(Material.IRON_SWORD);
+        ItemMeta ironSwordMeta = ironSword.getItemMeta();
+        if (ironSwordMeta != null) {
+            ironSwordMeta.setDisplayName("§f鉄の剣");
+            ironSwordMeta.addItemFlags(org.bukkit.inventory.ItemFlag.HIDE_ATTRIBUTES);
+            ironSwordMeta.setLore(Arrays.asList(
+                "§7コスト: §6ゴールド 7個",
+                "",
+                "§eクリックして購入！"
+            ));
+            ironSword.setItemMeta(ironSwordMeta);
+        }
+        inv.setItem(30, ironSword);
+
+        // Column 3 (under 強化): slots 23, 32
+        // Quick buy: Invisibility Potion
+        ItemStack invisPotion = new ItemStack(Material.POTION);
+        org.bukkit.inventory.meta.PotionMeta invisMeta = (org.bukkit.inventory.meta.PotionMeta) invisPotion.getItemMeta();
+        if (invisMeta != null) {
+            invisMeta.setDisplayName("§f透明化のポーション");
+            invisMeta.setLore(Arrays.asList(
+                "§7コスト: §aエメラルド 2個",
+                "§7効果時間: 30秒",
+                "",
+                "§eクリックして購入！"
+            ));
+            invisMeta.setColor(org.bukkit.Color.fromRGB(127, 127, 127));
+            invisPotion.setItemMeta(invisMeta);
+        }
+        inv.setItem(23, invisPotion);
+
+        // Quick buy: Jump Boost Potion
+        ItemStack jumpPotion = new ItemStack(Material.POTION);
+        org.bukkit.inventory.meta.PotionMeta jumpMeta = (org.bukkit.inventory.meta.PotionMeta) jumpPotion.getItemMeta();
+        if (jumpMeta != null) {
+            jumpMeta.setDisplayName("§f跳躍力上昇のポーション §7(Lv5)");
+            jumpMeta.setLore(Arrays.asList(
+                "§7コスト: §aエメラルド 1個",
+                "§7効果時間: 1分間",
+                "§9跳躍力上昇 V",
+                "",
+                "§eクリックして購入！"
+            ));
+            jumpMeta.setColor(org.bukkit.Color.fromRGB(34, 255, 76));
+            jumpPotion.setItemMeta(jumpMeta);
+        }
+        inv.setItem(32, jumpPotion);
+
+        // Column 4 (under 道具): slots 25, 34
+        // Quick buy: Golden Apple
+        ItemStack goldenApple = new ItemStack(Material.GOLDEN_APPLE);
+        ItemMeta goldenAppleMeta = goldenApple.getItemMeta();
+        if (goldenAppleMeta != null) {
+            goldenAppleMeta.setDisplayName("§6金リンゴ");
+            goldenAppleMeta.setLore(Arrays.asList(
+                "§7コスト: §6ゴールド 3個",
+                "",
+                "§eクリックして購入！"
+            ));
+            goldenApple.setItemMeta(goldenAppleMeta);
+        }
+        inv.setItem(25, goldenApple);
+
+        // Quick buy: TNT
+        ItemStack tntItem = new ItemStack(Material.TNT);
+        ItemMeta tntItemMeta = tntItem.getItemMeta();
+        if (tntItemMeta != null) {
+            tntItemMeta.setDisplayName("§cTNT");
+            tntItemMeta.setLore(Arrays.asList(
+                "§7コスト: §6ゴールド 5個",
+                "",
+                "§eクリックして購入！"
+            ));
+            tntItem.setItemMeta(tntItemMeta);
+        }
+        inv.setItem(34, tntItem);
+
+        player.openInventory(inv);
+    }
+
+    public void openBlocksShop(Player player) {
+        Inventory inv = Bukkit.createInventory(null, 54, "§e§lブロック");
+
+        // Get player's team (購入者のチーム)
+        String playerTeamName = plugin.getGameManager().getPlayerTeam(player.getUniqueId());
+        Material woolType = Material.WHITE_WOOL;
+        Material glassType = Material.WHITE_STAINED_GLASS;
+        String woolColorName = "白";
+
+        if (playerTeamName != null) {
+            woolType = TEAM_WOOL_MAP.getOrDefault(playerTeamName, Material.WHITE_WOOL);
+            glassType = TEAM_GLASS_MAP.getOrDefault(playerTeamName, Material.WHITE_STAINED_GLASS);
+            woolColorName = getWoolColorName(playerTeamName);
+        }
+
+        // Fill with light gray glass panes for decoration
+        ItemStack grayPane = new ItemStack(Material.LIGHT_GRAY_STAINED_GLASS_PANE);
+        ItemMeta grayMeta = grayPane.getItemMeta();
+        if (grayMeta != null) {
+            grayMeta.setDisplayName(" ");
+            grayPane.setItemMeta(grayMeta);
+        }
+
+        // Fill all empty slots with glass panes
+        for (int i = 0; i < 54; i++) {
+            inv.setItem(i, grayPane);
+        }
+
+        // Row 2: First row of items (evenly spaced)
+        // Wool 16 pieces for 4 iron
+        ItemStack wool16 = new ItemStack(woolType, 16);
+        ItemMeta wool16Meta = wool16.getItemMeta();
+        if (wool16Meta != null) {
+            wool16Meta.setDisplayName("§f" + woolColorName + "の羊毛");
+            wool16Meta.setLore(Arrays.asList(
+                "§7コスト: §f鉄 4個",
+                "",
+                "§eクリックして購入！"
+            ));
+            wool16.setItemMeta(wool16Meta);
+        }
+        inv.setItem(11, wool16);
+
+        // Oak Planks x10 for gold 6
+        ItemStack planks = new ItemStack(Material.OAK_PLANKS, 10);
+        ItemMeta planksMeta = planks.getItemMeta();
+        if (planksMeta != null) {
+            planksMeta.setDisplayName("§fオークの木材");
+            planksMeta.setLore(Arrays.asList(
+                "§7コスト: §6ゴールド 6個",
+                "",
+                "§eクリックして購入！"
+            ));
+            planks.setItemMeta(planksMeta);
+        }
+        inv.setItem(13, planks);
+
+        // End Stone x12 for iron 24
+        ItemStack endStone = new ItemStack(Material.END_STONE, 12);
+        ItemMeta endStoneMeta = endStone.getItemMeta();
+        if (endStoneMeta != null) {
+            endStoneMeta.setDisplayName("§fエンドストーン");
+            endStoneMeta.setLore(Arrays.asList(
+                "§7コスト: §f鉄 24個",
+                "",
+                "§eクリックして購入！"
+            ));
+            endStone.setItemMeta(endStoneMeta);
+        }
+        inv.setItem(15, endStone);
+
+        // Row 4: Second row of items (evenly spaced)
+        // Team colored Glass x4 for gold 6
+        ItemStack glass = new ItemStack(glassType, 4);
+        ItemMeta glassMeta = glass.getItemMeta();
+        if (glassMeta != null) {
+            glassMeta.setDisplayName("§f" + woolColorName + "のガラス");
+            glassMeta.setLore(Arrays.asList(
+                "§7コスト: §6ゴールド 6個",
+                "",
+                "§eクリックして購入！"
+            ));
+            glass.setItemMeta(glassMeta);
+        }
+        inv.setItem(29, glass);
+
+        // Obsidian x4 for emerald 6
+        ItemStack obsidian = new ItemStack(Material.OBSIDIAN, 4);
+        ItemMeta obsidianMeta = obsidian.getItemMeta();
+        if (obsidianMeta != null) {
+            obsidianMeta.setDisplayName("§f黒曜石");
+            obsidianMeta.setLore(Arrays.asList(
+                "§7コスト: §aエメラルド 6個",
+                "",
+                "§eクリックして購入！"
+            ));
+            obsidian.setItemMeta(obsidianMeta);
+        }
+        inv.setItem(31, obsidian);
+
+        // Back button
+        ItemStack backButton = new ItemStack(Material.ARROW);
+        ItemMeta backMeta = backButton.getItemMeta();
+        if (backMeta != null) {
+            backMeta.setDisplayName("§c§l戻る");
+            backMeta.setLore(Arrays.asList(
+                "§7メインショップに戻る"
+            ));
+            backButton.setItemMeta(backMeta);
+        }
+        inv.setItem(49, backButton);
+
+        player.openInventory(inv);
+    }
+
+    public void openEquipmentShop(Player player) {
+        Inventory inv = Bukkit.createInventory(null, 54, "§c§l装備");
+
+        // Fill with light gray glass panes for decoration
+        ItemStack grayPane = new ItemStack(Material.LIGHT_GRAY_STAINED_GLASS_PANE);
+        ItemMeta grayMeta = grayPane.getItemMeta();
+        if (grayMeta != null) {
+            grayMeta.setDisplayName(" ");
+            grayPane.setItemMeta(grayMeta);
+        }
+
+        // Fill all empty slots with glass panes
+        for (int i = 0; i < 54; i++) {
+            inv.setItem(i, grayPane);
+        }
+
+        // Row 2: Swords
+        // Stone Sword
+        ItemStack stoneSword = new ItemStack(Material.STONE_SWORD);
+        ItemMeta stoneSwordMeta = stoneSword.getItemMeta();
+        if (stoneSwordMeta != null) {
+            stoneSwordMeta.setDisplayName("§f石の剣");
+            stoneSwordMeta.addItemFlags(org.bukkit.inventory.ItemFlag.HIDE_ATTRIBUTES);
+            stoneSwordMeta.setLore(Arrays.asList(
+                "§7コスト: §f鉄 10個",
+                "",
+                "§eクリックして購入！"
+            ));
+            stoneSword.setItemMeta(stoneSwordMeta);
+        }
+        inv.setItem(10, stoneSword);
+
+        // Iron Sword
+        ItemStack ironSword = new ItemStack(Material.IRON_SWORD);
+        ItemMeta ironSwordMeta = ironSword.getItemMeta();
+        if (ironSwordMeta != null) {
+            ironSwordMeta.setDisplayName("§f鉄の剣");
+            ironSwordMeta.addItemFlags(org.bukkit.inventory.ItemFlag.HIDE_ATTRIBUTES);
+            ironSwordMeta.setLore(Arrays.asList(
+                "§7コスト: §6ゴールド 7個",
+                "",
+                "§eクリックして購入！"
+            ));
+            ironSword.setItemMeta(ironSwordMeta);
+        }
+        inv.setItem(12, ironSword);
+
+        // Diamond Sword
+        ItemStack diamondSword = new ItemStack(Material.DIAMOND_SWORD);
+        ItemMeta diamondSwordMeta = diamondSword.getItemMeta();
+        if (diamondSwordMeta != null) {
+            diamondSwordMeta.setDisplayName("§fダイヤの剣");
+            diamondSwordMeta.addItemFlags(org.bukkit.inventory.ItemFlag.HIDE_ATTRIBUTES);
+            diamondSwordMeta.setLore(Arrays.asList(
+                "§7コスト: §aエメラルド 3個",
+                "",
+                "§eクリックして購入！"
+            ));
+            diamondSword.setItemMeta(diamondSwordMeta);
+        }
+        inv.setItem(14, diamondSword);
+
+        // Netherite Sword
+        ItemStack netheriteSword = new ItemStack(Material.NETHERITE_SWORD);
+        ItemMeta netheriteSwordMeta = netheriteSword.getItemMeta();
+        if (netheriteSwordMeta != null) {
+            netheriteSwordMeta.setDisplayName("§fネザライトの剣");
+            netheriteSwordMeta.addItemFlags(org.bukkit.inventory.ItemFlag.HIDE_ATTRIBUTES);
+            netheriteSwordMeta.setLore(Arrays.asList(
+                "§7コスト: §aエメラルド 7個",
+                "",
+                "§eクリックして購入！"
+            ));
+            netheriteSword.setItemMeta(netheriteSwordMeta);
+        }
+        inv.setItem(16, netheriteSword);
+
+        // Row 3: Gun and Ammo
+        // Sniper Rifle
+        ItemStack gun = new ItemStack(Material.CROSSBOW);
+        ItemMeta gunMeta = gun.getItemMeta();
+        if (gunMeta != null) {
+            gunMeta.setDisplayName("§6§lスナイパーライフル");
+            gunMeta.setLore(Arrays.asList(
+                "§7コスト: §6ゴールド 20個",
+                "",
+                "§6ダメージ:",
+                "§c・ヘッドショット: §f11",
+                "§e・胴体: §f7",
+                "",
+                "§7左クリック: 射撃",
+                "§7クールダウン: 3秒",
+                "§8※持っている間鈍足",
+                "",
+                "§eクリックして購入！"
+            ));
+            gun.setItemMeta(gunMeta);
+        }
+        inv.setItem(21, gun);
+
+        // Ammo
+        ItemStack ammo = new ItemStack(Material.IRON_NUGGET, 3);
+        ItemMeta ammoMeta = ammo.getItemMeta();
+        if (ammoMeta != null) {
+            ammoMeta.setDisplayName("§e弾薬 x3");
+            ammoMeta.setLore(Arrays.asList(
+                "§7コスト: §6ゴールド 6個",
+                "§7スナイパーライフル用の弾薬",
+                "§71発につき1個消費",
+                "",
+                "§eクリックして購入！"
+            ));
+            ammo.setItemMeta(ammoMeta);
+        }
+        inv.setItem(23, ammo);
+
+        // Row 4: Special items + Armor
+        // Knockback Stick
+        ItemStack knockbackStick = new ItemStack(Material.STICK);
+        ItemMeta knockbackStickMeta = knockbackStick.getItemMeta();
+        if (knockbackStickMeta != null) {
+            knockbackStickMeta.setDisplayName("§fノックバック棒");
+            knockbackStickMeta.setLore(Arrays.asList(
+                "§7コスト: §6ゴールド 8個",
+                "§9ノックバック I",
+                "",
+                "§eクリックして購入！"
+            ));
+            knockbackStickMeta.addEnchant(org.bukkit.enchantments.Enchantment.KNOCKBACK, 1, true);
+            knockbackStick.setItemMeta(knockbackStickMeta);
+        }
+        inv.setItem(28, knockbackStick);
+
+        // Row 5: Armor
+        // Chainmail Armor
+        ItemStack chainArmor = new ItemStack(Material.CHAINMAIL_BOOTS);
+        ItemMeta chainArmorMeta = chainArmor.getItemMeta();
+        if (chainArmorMeta != null) {
+            chainArmorMeta.setDisplayName("§fチェーンの装備");
+            chainArmorMeta.addItemFlags(org.bukkit.inventory.ItemFlag.HIDE_ATTRIBUTES);
+            chainArmorMeta.setLore(Arrays.asList(
+                "§7コスト: §f鉄 40個",
+                "§7レギンスとブーツを装備",
+                "",
+                "§eクリックして購入！"
+            ));
+            chainArmor.setItemMeta(chainArmorMeta);
+        }
+        inv.setItem(37, chainArmor);
+
+        // Iron Armor
+        ItemStack ironArmor = new ItemStack(Material.IRON_BOOTS);
+        ItemMeta ironArmorMeta = ironArmor.getItemMeta();
+        if (ironArmorMeta != null) {
+            ironArmorMeta.setDisplayName("§f鉄の装備");
+            ironArmorMeta.addItemFlags(org.bukkit.inventory.ItemFlag.HIDE_ATTRIBUTES);
+            ironArmorMeta.setLore(Arrays.asList(
+                "§7コスト: §6ゴールド 12個",
+                "§7レギンスとブーツを装備",
+                "",
+                "§eクリックして購入！"
+            ));
+            ironArmor.setItemMeta(ironArmorMeta);
+        }
+        inv.setItem(39, ironArmor);
+
+        // Diamond Armor
+        ItemStack diamondArmor = new ItemStack(Material.DIAMOND_BOOTS);
+        ItemMeta diamondArmorMeta = diamondArmor.getItemMeta();
+        if (diamondArmorMeta != null) {
+            diamondArmorMeta.setDisplayName("§fダイヤの装備");
+            diamondArmorMeta.addItemFlags(org.bukkit.inventory.ItemFlag.HIDE_ATTRIBUTES);
+            diamondArmorMeta.setLore(Arrays.asList(
+                "§7コスト: §aエメラルド 6個",
+                "§7レギンスとブーツを装備",
+                "",
+                "§eクリックして購入！"
+            ));
+            diamondArmor.setItemMeta(diamondArmorMeta);
+        }
+        inv.setItem(41, diamondArmor);
+
+        // Netherite Armor
+        ItemStack netheriteArmor = new ItemStack(Material.NETHERITE_BOOTS);
+        ItemMeta netheriteArmorMeta = netheriteArmor.getItemMeta();
+        if (netheriteArmorMeta != null) {
+            netheriteArmorMeta.setDisplayName("§fネザライトの装備");
+            netheriteArmorMeta.addItemFlags(org.bukkit.inventory.ItemFlag.HIDE_ATTRIBUTES);
+            netheriteArmorMeta.setLore(Arrays.asList(
+                "§7コスト: §aエメラルド 24個",
+                "§7レギンスとブーツを装備",
+                "",
+                "§eクリックして購入！"
+            ));
+            netheriteArmor.setItemMeta(netheriteArmorMeta);
+        }
+        inv.setItem(43, netheriteArmor);
+
+        // Back button
+        ItemStack backButton = new ItemStack(Material.ARROW);
+        ItemMeta backMeta = backButton.getItemMeta();
+        if (backMeta != null) {
+            backMeta.setDisplayName("§c§l戻る");
+            backMeta.setLore(Arrays.asList(
+                "§7メインショップに戻る"
+            ));
+            backButton.setItemMeta(backMeta);
+        }
+        inv.setItem(49, backButton);
+
+        player.openInventory(inv);
+    }
+
+    public void openEnhancementShop(Player player) {
+        Inventory inv = Bukkit.createInventory(null, 54, "§d§l強化");
+
+        // Fill with light gray glass panes for decoration
+        ItemStack grayPane = new ItemStack(Material.LIGHT_GRAY_STAINED_GLASS_PANE);
+        ItemMeta grayMeta = grayPane.getItemMeta();
+        if (grayMeta != null) {
+            grayMeta.setDisplayName(" ");
+            grayPane.setItemMeta(grayMeta);
+        }
+
+        // Fill all empty slots with glass panes
+        for (int i = 0; i < 54; i++) {
+            inv.setItem(i, grayPane);
+        }
+
+        // Row 2: Potions
+        // Invisibility Potion (30 seconds)
+        ItemStack invisPotion = new ItemStack(Material.POTION);
+        org.bukkit.inventory.meta.PotionMeta invisMeta = (org.bukkit.inventory.meta.PotionMeta) invisPotion.getItemMeta();
+        if (invisMeta != null) {
+            invisMeta.setDisplayName("§f透明化のポーション");
+            invisMeta.setLore(Arrays.asList(
+                "§7コスト: §aエメラルド 2個",
+                "§7効果時間: 30秒",
+                "",
+                "§eクリックして購入！"
+            ));
+            invisMeta.setColor(org.bukkit.Color.fromRGB(127, 127, 127));
+            invisPotion.setItemMeta(invisMeta);
+        }
+        inv.setItem(11, invisPotion);
+
+        // Jump Boost Potion (1 minute)
+        ItemStack jumpPotion = new ItemStack(Material.POTION);
+        org.bukkit.inventory.meta.PotionMeta jumpMeta = (org.bukkit.inventory.meta.PotionMeta) jumpPotion.getItemMeta();
+        if (jumpMeta != null) {
+            jumpMeta.setDisplayName("§f跳躍力上昇のポーション §7(Lv5)");
+            jumpMeta.setLore(Arrays.asList(
+                "§7コスト: §aエメラルド 1個",
+                "§7効果時間: 1分間",
+                "§9跳躍力上昇 V",
+                "",
+                "§eクリックして購入！"
+            ));
+            jumpMeta.setColor(org.bukkit.Color.fromRGB(34, 255, 76));
+            jumpPotion.setItemMeta(jumpMeta);
+        }
+        inv.setItem(13, jumpPotion);
+
+        // Speed Potion
+        ItemStack speedPotion = new ItemStack(Material.POTION);
+        org.bukkit.inventory.meta.PotionMeta speedMeta = (org.bukkit.inventory.meta.PotionMeta) speedPotion.getItemMeta();
+        if (speedMeta != null) {
+            speedMeta.setDisplayName("§f移動速度上昇のポーション");
+            speedMeta.setLore(Arrays.asList(
+                "§7コスト: §aエメラルド 1個",
+                "§7効果時間: 1分間",
+                "",
+                "§eクリックして購入！"
+            ));
+            speedMeta.setColor(org.bukkit.Color.fromRGB(124, 175, 176));
+            speedPotion.setItemMeta(speedMeta);
+        }
+        inv.setItem(15, speedPotion);
+
+        // Row 3: Bridge Builder Egg
+        ItemStack bridgeEgg = new ItemStack(Material.EGG);
+        ItemMeta bridgeEggMeta = bridgeEgg.getItemMeta();
+        if (bridgeEggMeta != null) {
+            bridgeEggMeta.setDisplayName("§bBridge Builder Egg");
+            bridgeEggMeta.setLore(Arrays.asList(
+                "§7コスト: §aエメラルド 1個",
+                "§7右クリックで投げると軌道上に羊毛を生成",
+                "§7最大距離: 25ブロック",
+                "",
+                "§eクリックして購入！"
+            ));
+            bridgeEggMeta.setItemModel(org.bukkit.NamespacedKey.minecraft("bridgeegg"));
+            bridgeEgg.setItemMeta(bridgeEggMeta);
+        }
+        inv.setItem(22, bridgeEgg);
+
+        // Back button
+        ItemStack backButton = new ItemStack(Material.ARROW);
+        ItemMeta backMeta = backButton.getItemMeta();
+        if (backMeta != null) {
+            backMeta.setDisplayName("§c§l戻る");
+            backMeta.setLore(Arrays.asList(
+                "§7メインショップに戻る"
+            ));
+            backButton.setItemMeta(backMeta);
+        }
+        inv.setItem(49, backButton);
+
+        player.openInventory(inv);
+    }
+
+
+    public void openArmorShop(Player player) {
+        Inventory inv = Bukkit.createInventory(null, 54, "§9§l防具");
+
+        // Fill with light gray glass panes for decoration
+        ItemStack grayPane = new ItemStack(Material.LIGHT_GRAY_STAINED_GLASS_PANE);
+        ItemMeta grayMeta = grayPane.getItemMeta();
+        if (grayMeta != null) {
+            grayMeta.setDisplayName(" ");
+            grayPane.setItemMeta(grayMeta);
+        }
+
+        // Fill all empty slots with glass panes
+        for (int i = 0; i < 54; i++) {
+            inv.setItem(i, grayPane);
+        }
+
+        // Row 2: Armor sets
+        // Chainmail Armor
+        ItemStack chainArmor = new ItemStack(Material.CHAINMAIL_BOOTS);
+        ItemMeta chainArmorMeta = chainArmor.getItemMeta();
+        if (chainArmorMeta != null) {
+            chainArmorMeta.setDisplayName("§fチェーンの装備");
+            chainArmorMeta.addItemFlags(org.bukkit.inventory.ItemFlag.HIDE_ATTRIBUTES);
+            chainArmorMeta.setLore(Arrays.asList(
+                "§7コスト: §f鉄 40個",
+                "§7レギンスとブーツを装備",
+                "",
+                "§eクリックして購入！"
+            ));
+            chainArmor.setItemMeta(chainArmorMeta);
+        }
+        inv.setItem(10, chainArmor);
+
+        // Iron Armor
+        ItemStack ironArmor = new ItemStack(Material.IRON_BOOTS);
+        ItemMeta ironArmorMeta = ironArmor.getItemMeta();
+        if (ironArmorMeta != null) {
+            ironArmorMeta.setDisplayName("§f鉄の装備");
+            ironArmorMeta.addItemFlags(org.bukkit.inventory.ItemFlag.HIDE_ATTRIBUTES);
+            ironArmorMeta.setLore(Arrays.asList(
+                "§7コスト: §6ゴールド 12個",
+                "§7レギンスとブーツを装備",
+                "",
+                "§eクリックして購入！"
+            ));
+            ironArmor.setItemMeta(ironArmorMeta);
+        }
+        inv.setItem(12, ironArmor);
+
+        // Diamond Armor
+        ItemStack diamondArmor = new ItemStack(Material.DIAMOND_BOOTS);
+        ItemMeta diamondArmorMeta = diamondArmor.getItemMeta();
+        if (diamondArmorMeta != null) {
+            diamondArmorMeta.setDisplayName("§fダイヤの装備");
+            diamondArmorMeta.addItemFlags(org.bukkit.inventory.ItemFlag.HIDE_ATTRIBUTES);
+            diamondArmorMeta.setLore(Arrays.asList(
+                "§7コスト: §aエメラルド 6個",
+                "§7レギンスとブーツを装備",
+                "",
+                "§eクリックして購入！"
+            ));
+            diamondArmor.setItemMeta(diamondArmorMeta);
+        }
+        inv.setItem(14, diamondArmor);
+
+        // Netherite Armor
+        ItemStack netheriteArmor = new ItemStack(Material.NETHERITE_BOOTS);
+        ItemMeta netheriteArmorMeta = netheriteArmor.getItemMeta();
+        if (netheriteArmorMeta != null) {
+            netheriteArmorMeta.setDisplayName("§fネザライトの装備");
+            netheriteArmorMeta.addItemFlags(org.bukkit.inventory.ItemFlag.HIDE_ATTRIBUTES);
+            netheriteArmorMeta.setLore(Arrays.asList(
+                "§7コスト: §aエメラルド 24個",
+                "§7レギンスとブーツを装備",
+                "",
+                "§eクリックして購入！"
+            ));
+            netheriteArmor.setItemMeta(netheriteArmorMeta);
+        }
+        inv.setItem(16, netheriteArmor);
+
+        // Back button
+        ItemStack backButton = new ItemStack(Material.ARROW);
+        ItemMeta backMeta = backButton.getItemMeta();
+        if (backMeta != null) {
+            backMeta.setDisplayName("§c§l戻る");
+            backMeta.setLore(Arrays.asList(
+                "§7メインショップに戻る"
+            ));
+            backButton.setItemMeta(backMeta);
+        }
+        inv.setItem(49, backButton);
+
+        player.openInventory(inv);
+    }
+
+    public void openToolsShop(Player player) {
+        Inventory inv = Bukkit.createInventory(null, 54, "§6§l道具");
+
+        // Fill with light gray glass panes for decoration
+        ItemStack grayPane = new ItemStack(Material.LIGHT_GRAY_STAINED_GLASS_PANE);
+        ItemMeta grayMeta = grayPane.getItemMeta();
+        if (grayMeta != null) {
+            grayMeta.setDisplayName(" ");
+            grayPane.setItemMeta(grayMeta);
+        }
+
+        // Fill all empty slots with glass panes
+        for (int i = 0; i < 54; i++) {
+            inv.setItem(i, grayPane);
+        }
+
+        // ========== Row 1: 消耗品 ==========
+        // Golden Apple
+        ItemStack goldenApple = new ItemStack(Material.GOLDEN_APPLE);
+        ItemMeta goldenAppleMeta = goldenApple.getItemMeta();
+        if (goldenAppleMeta != null) {
+            goldenAppleMeta.setDisplayName("§6金リンゴ");
+            goldenAppleMeta.setLore(Arrays.asList(
+                "§7コスト: §6ゴールド 3個",
+                "",
+                "§eクリックして購入！"
+            ));
+            goldenApple.setItemMeta(goldenAppleMeta);
+        }
+        inv.setItem(10, goldenApple);
+
+        // TNT
+        ItemStack tnt = new ItemStack(Material.TNT);
+        ItemMeta tntMeta = tnt.getItemMeta();
+        if (tntMeta != null) {
+            tntMeta.setDisplayName("§cTNT");
+            tntMeta.setLore(Arrays.asList(
+                "§7コスト: §6ゴールド 5個",
+                "",
+                "§eクリックして購入！"
+            ));
+            tnt.setItemMeta(tntMeta);
+        }
+        inv.setItem(12, tnt);
+
+        // Water Bucket
+        ItemStack waterBucket = new ItemStack(Material.WATER_BUCKET);
+        ItemMeta waterBucketMeta = waterBucket.getItemMeta();
+        if (waterBucketMeta != null) {
+            waterBucketMeta.setDisplayName("§b水入りバケツ");
+            waterBucketMeta.setLore(Arrays.asList(
+                "§7コスト: §6ゴールド 4個",
+                "§7使用後はバケツごと消えます",
+                "",
+                "§eクリックして購入！"
+            ));
+            waterBucket.setItemMeta(waterBucketMeta);
+        }
+        inv.setItem(14, waterBucket);
+
+        // Ender Pearl
+        ItemStack enderPearl = new ItemStack(Material.ENDER_PEARL);
+        ItemMeta enderPearlMeta = enderPearl.getItemMeta();
+        if (enderPearlMeta != null) {
+            enderPearlMeta.setDisplayName("§5エンダーパール");
+            enderPearlMeta.setLore(Arrays.asList(
+                "§7コスト: §aエメラルド 4個",
+                "",
+                "§eクリックして購入！"
+            ));
+            enderPearl.setItemMeta(enderPearlMeta);
+        }
+        inv.setItem(16, enderPearl);
+
+        // ========== Row 2: ツール ==========
+        // Shears
+        ItemStack shears = new ItemStack(Material.SHEARS);
+        ItemMeta shearsMeta = shears.getItemMeta();
+        if (shearsMeta != null) {
+            shearsMeta.setDisplayName("§fハサミ");
+            shearsMeta.setLore(Arrays.asList(
+                "§7コスト: §f鉄 20個",
+                "",
+                "§eクリックして購入！"
+            ));
+            shears.setItemMeta(shearsMeta);
+        }
+        inv.setItem(19, shears);
+
+        // Axe upgrade - Show only next level
+        int currentAxeLevel = plugin.getToolUpgradeManager().getAxeLevel(player.getUniqueId());
+        int nextAxeLevel = currentAxeLevel + 1;
+
+        if (nextAxeLevel <= 4) {
+            Material axeMaterial;
+            String axeName;
+            Material currency;
+            int cost;
+
+            switch (nextAxeLevel) {
+                case 1:
+                    axeMaterial = Material.WOODEN_AXE;
+                    axeName = "§f木の斧";
+                    currency = Material.IRON_INGOT;
+                    cost = 12;
+                    break;
+                case 2:
+                    axeMaterial = Material.STONE_AXE;
+                    axeName = "§f石の斧";
+                    currency = Material.IRON_INGOT;
+                    cost = 24;
+                    break;
+                case 3:
+                    axeMaterial = Material.IRON_AXE;
+                    axeName = "§f鉄の斧";
+                    currency = Material.GOLD_INGOT;
+                    cost = 8;
+                    break;
+                case 4:
+                default:
+                    axeMaterial = Material.DIAMOND_AXE;
+                    axeName = "§fダイヤの斧";
+                    currency = Material.GOLD_INGOT;
+                    cost = 16;
+                    break;
+            }
+
+            ItemStack axe = new ItemStack(axeMaterial);
+            ItemMeta axeMeta = axe.getItemMeta();
+            if (axeMeta != null) {
+                axeMeta.setDisplayName(axeName);
+                String currencyName = currency == Material.IRON_INGOT ? "§f鉄" : "§6ゴールド";
+                axeMeta.setLore(Arrays.asList(
+                    "§7コスト: " + currencyName + " " + cost + "個",
+                    "§7アップグレード: レベル " + nextAxeLevel,
+                    "",
+                    "§eクリックして購入！"
+                ));
+                axe.setItemMeta(axeMeta);
+            }
+            inv.setItem(21, axe);
+        }
+
+        // Pickaxe upgrade - Show only next level
+        int currentPickaxeLevel = plugin.getToolUpgradeManager().getPickaxeLevel(player.getUniqueId());
+        int nextPickaxeLevel = currentPickaxeLevel + 1;
+
+        if (nextPickaxeLevel <= 4) {
+            Material pickaxeMaterial;
+            String pickaxeName;
+            Material currency;
+            int cost;
+
+            switch (nextPickaxeLevel) {
+                case 1:
+                    pickaxeMaterial = Material.WOODEN_PICKAXE;
+                    pickaxeName = "§f木のツルハシ";
+                    currency = Material.IRON_INGOT;
+                    cost = 12;
+                    break;
+                case 2:
+                    pickaxeMaterial = Material.STONE_PICKAXE;
+                    pickaxeName = "§f石のツルハシ";
+                    currency = Material.IRON_INGOT;
+                    cost = 24;
+                    break;
+                case 3:
+                    pickaxeMaterial = Material.IRON_PICKAXE;
+                    pickaxeName = "§f鉄のツルハシ";
+                    currency = Material.GOLD_INGOT;
+                    cost = 8;
+                    break;
+                case 4:
+                default:
+                    pickaxeMaterial = Material.DIAMOND_PICKAXE;
+                    pickaxeName = "§fダイヤのツルハシ";
+                    currency = Material.GOLD_INGOT;
+                    cost = 16;
+                    break;
+            }
+
+            ItemStack pickaxe = new ItemStack(pickaxeMaterial);
+            ItemMeta pickaxeMeta = pickaxe.getItemMeta();
+            if (pickaxeMeta != null) {
+                pickaxeMeta.setDisplayName(pickaxeName);
+                String currencyName = currency == Material.IRON_INGOT ? "§f鉄" : "§6ゴールド";
+                pickaxeMeta.setLore(Arrays.asList(
+                    "§7コスト: " + currencyName + " " + cost + "個",
+                    "§7アップグレード: レベル " + nextPickaxeLevel,
+                    "",
+                    "§eクリックして購入！"
+                ));
+                pickaxe.setItemMeta(pickaxeMeta);
+            }
+            inv.setItem(23, pickaxe);
+        }
+
+        // ========== Row 3: 特殊アイテム ==========
+        // Fireball
+        ItemStack fireball = new ItemStack(Material.FIRE_CHARGE);
+        ItemMeta fireballMeta = fireball.getItemMeta();
+        if (fireballMeta != null) {
+            fireballMeta.setDisplayName("§c火玉");
+            fireballMeta.setLore(Arrays.asList(
+                "§7コスト: §f鉄 60個",
+                "§7右クリックで火の玉を発射",
+                "",
+                "§eクリックして購入！"
+            ));
+            fireball.setItemMeta(fireballMeta);
+        }
+        inv.setItem(30, fireball);
+
+        // Iron Golem
+        ItemStack ironGolem = new ItemStack(Material.IRON_BLOCK);
+        ItemMeta ironGolemMeta = ironGolem.getItemMeta();
+        if (ironGolemMeta != null) {
+            ironGolemMeta.setDisplayName("§7アイアンゴーレム");
+            ironGolemMeta.setLore(Arrays.asList(
+                "§7コスト: §f鉄 120個",
+                "§7自チームの敵を攻撃するゴーレムを召喚",
+                "",
+                "§eクリックして購入！"
+            ));
+            ironGolem.setItemMeta(ironGolemMeta);
+        }
+        inv.setItem(32, ironGolem);
+
+        // Ω-LAST
+        ItemStack omegaLast = new ItemStack(Material.NETHER_STAR);
+        ItemMeta omegaLastMeta = omegaLast.getItemMeta();
+        if (omegaLastMeta != null) {
+            omegaLastMeta.setDisplayName("§c§lΩ-LAST");
+            omegaLastMeta.setLore(Arrays.asList(
+                "§7コスト: §6ゴールド 28個",
+                "",
+                "§c⚠ 最終兵器 ⚠",
+                "§7敵チームのベッドに突撃する",
+                "§7着弾時に周囲のブロックを破壊",
+                "",
+                "§7条件: ベッドから10m以内",
+                "§7クールダウン: 10分/チーム",
+                "",
+                "§eクリックして購入！"
+            ));
+            omegaLastMeta.setItemModel(org.bukkit.NamespacedKey.minecraft("last"));
+            omegaLast.setItemMeta(omegaLastMeta);
+        }
+        inv.setItem(34, omegaLast);
+
+        // Back button
+        ItemStack backButton = new ItemStack(Material.ARROW);
+        ItemMeta backMeta = backButton.getItemMeta();
+        if (backMeta != null) {
+            backMeta.setDisplayName("§c§l戻る");
+            backMeta.setLore(Arrays.asList(
+                "§7メインショップに戻る"
+            ));
+            backButton.setItemMeta(backMeta);
+        }
+        inv.setItem(49, backButton);
+
+        player.openInventory(inv);
+    }
+
+    public Material getTeamWool(String teamName) {
+        return TEAM_WOOL_MAP.getOrDefault(teamName, Material.WHITE_WOOL);
+    }
+
+    private String getWoolColorName(String teamName) {
+        switch (teamName) {
+            case "アクア": return "水色";
+            case "イエロー": return "黄色";
+            case "ブルー": return "青";
+            case "ホワイト": return "白";
+            case "グレー": return "灰色";
+            case "ピンク": return "ピンク";
+            case "グリーン": return "緑";
+            case "レッド": return "赤";
+            default: return "白";
+        }
+    }
+}

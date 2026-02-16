@@ -1,0 +1,19 @@
+{
+  "type": "imageframe:url_static",
+  "index": 14,
+  "name": "photo13",
+  "url": "https://media.discordapp.net/attachments/1052211179281465395/1459197881301864702/image.png?ex\u003d6962676d\u0026is\u003d696115ed\u0026hm\u003d6399aa5d729c385fd7fa5e0a2d09007997509eee685951e93a255d0dd15a203b\u0026\u003d\u0026format\u003dwebp\u0026quality\u003dlossless",
+  "width": 1,
+  "height": 1,
+  "ditheringType": "nearest-color",
+  "creator": "bc8069af-a431-490c-9659-7b85d41933d2",
+  "hasAccess": {},
+  "creationTime": 1767970375107,
+  "mapdata": [
+    {
+      "mapid": 112,
+      "image": "0.png",
+      "markers": []
+    }
+  ]
+}

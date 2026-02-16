@@ -1,0 +1,19 @@
+{
+  "type": "imageframe:url_static",
+  "index": 11,
+  "name": "redcarpet",
+  "url": "https://cdn.discordapp.com/attachments/1052211179281465395/1459190553240666293/red-carpet-texture_1373-198.jpg?ex\u003d6962609a\u0026is\u003d69610f1a\u0026hm\u003d1b3f4fdb9baf613b298591652afe9f0156fd58e5d2dac636d5bb24642758173f\u0026",
+  "width": 1,
+  "height": 1,
+  "ditheringType": "nearest-color",
+  "creator": "bc8069af-a431-490c-9659-7b85d41933d2",
+  "hasAccess": {},
+  "creationTime": 1767968565946,
+  "mapdata": [
+    {
+      "mapid": 104,
+      "image": "0.png",
+      "markers": []
+    }
+  ]
+}

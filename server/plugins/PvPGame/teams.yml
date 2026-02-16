@@ -1,0 +1,105 @@
+teams:
+  アクア:
+    bed:
+      world: world
+      x: 30
+      y: 72
+      z: 82
+    spawn:
+      world: world
+      x: 30.5
+      y: 72.1
+      z: 87.5
+      yaw: 0.0
+      pitch: 0.0
+  ブルー:
+    bed:
+      world: world
+      x: 30
+      y: 72
+      z: -82
+    spawn:
+      world: world
+      x: 30.5
+      y: 72.1
+      z: -86.5
+      yaw: 0.0
+      pitch: 0.0
+  イエロー:
+    bed:
+      world: world
+      x: 82
+      y: 72
+      z: 30
+    spawn:
+      world: world
+      x: 87.5
+      y: 72.1
+      z: 30.5
+      yaw: 0.0
+      pitch: 0.0
+  ホワイト:
+    bed:
+      world: world
+      x: -30
+      y: 72
+      z: 82
+    spawn:
+      world: world
+      x: -29.5
+      y: 72.1
+      z: 87.5
+      yaw: 0.0
+      pitch: 0.0
+  グレー:
+    bed:
+      world: world
+      x: -82
+      y: 72
+      z: -30
+    spawn:
+      world: world
+      x: -86.5
+      y: 72.1
+      z: -29.5
+      yaw: 0.0
+      pitch: 0.0
+  ピンク:
+    bed:
+      world: world
+      x: -82
+      y: 72
+      z: 30
+    spawn:
+      world: world
+      x: -86.5
+      y: 72.1
+      z: 30.5
+      yaw: 0.0
+      pitch: 0.0
+  グリーン:
+    bed:
+      world: world
+      x: 82
+      y: 72
+      z: -30
+    spawn:
+      world: world
+      x: 87.5
+      y: 72.1
+      z: -29.5
+      yaw: 0.0
+      pitch: 0.0
+  レッド:
+    bed:
+      world: world
+      x: -30
+      y: 72
+      z: -82
+    spawn:
+      world: world
+      x: -29.5
+      y: 72.1
+      z: -86.5
+      yaw: 0.0
+      pitch: 0.0

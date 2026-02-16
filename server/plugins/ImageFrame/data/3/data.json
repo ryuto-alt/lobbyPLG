@@ -1,0 +1,24 @@
+{
+  "type": "imageframe:url_static",
+  "index": 3,
+  "name": "photo4",
+  "url": "https://media.discordapp.net/attachments/1113458648757325946/1386882766527922248/2025-06-24_103546.png?ex\u003d6961ad3a\u0026is\u003d69605bba\u0026hm\u003db68288c68a949915d262249bfc59c7e2b7437951c8cca43d2e6660cfd9b09231\u0026\u003d\u0026format\u003dwebp\u0026quality\u003dlossless",
+  "width": 1,
+  "height": 2,
+  "ditheringType": "nearest-color",
+  "creator": "bc8069af-a431-490c-9659-7b85d41933d2",
+  "hasAccess": {},
+  "creationTime": 1767965211557,
+  "mapdata": [
+    {
+      "mapid": 36,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 37,
+      "image": "1.png",
+      "markers": []
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+displayName: 砂城
+worldFolder: SandCastle
+enabled: true
+setupComplete: false
+teams: {}
+generators: {}
+shops: {}
+upgradeShops: {}

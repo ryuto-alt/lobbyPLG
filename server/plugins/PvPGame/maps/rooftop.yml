@@ -1,0 +1,8 @@
+displayName: 屋上
+worldFolder: RoofTop
+enabled: true
+setupComplete: false
+teams: {}
+generators: {}
+shops: {}
+upgradeShops: {}

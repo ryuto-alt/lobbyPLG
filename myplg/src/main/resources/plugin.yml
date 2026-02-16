@@ -1,0 +1,92 @@
+name: PvPGame
+version: '${version}'
+main: myplg.myplg.PvPGame
+api-version: '1.21'
+commands:
+  setbed:
+    description: チームのベッドを設定します
+    usage: /setbed <チーム名>
+    permission: pvpgame.admin
+  gamestart:
+    description: ゲームを開始します（本から呼び出し）
+    usage: /gamestart <solo|duo|triple|custom>
+    permission: pvpgame.admin
+  edit:
+    description: ゲーム管理の本を入手します
+    usage: /edit
+    permission: pvpgame.admin
+  save:
+    description: ワールドをバックアップします
+    usage: /save [ワールド名]
+    permission: pvpgame.admin
+  end:
+    description: ゲームを終了してワールドを復元します
+    usage: /end [ワールド名]
+    permission: pvpgame.admin
+  gene:
+    description: ジェネレーターを設定します
+    usage: /gene <diamond|gold|iron|emerald>
+    permission: pvpgame.admin
+  genereload:
+    description: generators.ymlからジェネレーター設定を再読み込みします
+    usage: /genereload
+    permission: pvpgame.admin
+  shop1:
+    description: ショップ村人のスポーンエッグを入手します
+    usage: /shop1
+    permission: pvpgame.admin
+  shop2:
+    description: ショップ2スケルトンのスポーンエッグを入手します（陣地強化・武器強化・装備強化・トラップ）
+    usage: /shop2
+    permission: pvpgame.admin
+  sreset:
+    description: 全プレイヤーのショップツールアップグレード状態をリセットします
+    usage: /sreset
+    permission: pvpgame.admin
+  gameworld:
+    description: マップ選択GUIを開きます（OP専用）
+    usage: /gameworld
+    permission: pvpgame.admin
+  gamereload:
+    description: ゲーム状態を手動でリセットします（自動リセットの保険）
+    usage: /gamereload
+    permission: pvpgame.admin
+  lobby:
+    description: ロビーワールドに戻ります（ゲームワールドから）
+    usage: /lobby
+    aliases: [hub]
+  hub:
+    description: ロビーワールドに戻ります（ゲームワールドから）
+    usage: /hub
+    aliases: [lobby]
+  endmode:
+    description: ENDモードのボーダーを可視化します
+    usage: /endmode
+    permission: pvpgame.admin
+  endmodekill:
+    description: ENDモードのボーダーを強制消去します
+    usage: /endmodekill
+    permission: pvpgame.admin
+  test:
+    description: ホットリロードテスト用コマンド
+    usage: /test
+  map:
+    description: マップを管理します（作成・編集・選択）
+    usage: /map <list|create|import|edit|select|random>
+    permission: pvpgame.admin
+  mapedit:
+    description: チーム編集ツールを取得します
+    usage: /mapedit <チーム名>
+    permission: pvpgame.admin
+  mapselect:
+    description: マップ選択GUIを開きます
+    usage: /mapselect
+    permission: pvpgame.admin
+  setlobby:
+    description: 現在位置をマップの待機場所として設定します
+    usage: /setlobby
+    permission: pvpgame.admin
+permissions:
+  pvpgame.admin:
+    description: PvPGameの管理コマンドを使用する権限
+    default: op

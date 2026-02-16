@@ -1,0 +1,517 @@
+displayName: 氷河
+worldFolder: Glacier
+enabled: true
+setupComplete: true
+endMode:
+  borderSize: 234.0
+  centerX: 0.0
+  centerZ: 0.0
+  shrinkSpeed: 1.0
+  finalSize: 10.0
+lobbySpawn:
+  world: Glacier
+  x: 0.6370490551283813
+  y: 118.0
+  z: 0.706725341227226
+  yaw: -179.98242
+  pitch: -3.4277306
+teams:
+  アクア:
+    bed:
+      world: Glacier
+      x: 32.0
+      y: 81.0
+      z: 66.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: Glacier
+      x: 32.5
+      y: 81.0
+      z: 71.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: Glacier
+      x: 29.5
+      y: 81.0
+      z: 87.5
+      yaw: 175.3783
+      pitch: 0.0
+    upgradeShop:
+      world: Glacier
+      x: 35.5
+      y: 81.0
+      z: 87.5
+      yaw: 178.70627
+      pitch: 0.0
+    territoryRadius: 15
+    ironGenerator:
+      world: Glacier
+      x: 32.5
+      y: 81.0
+      z: 86.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: Glacier
+      x: 32.5
+      y: 81.0
+      z: 86.5
+      yaw: 0.0
+      pitch: 0.0
+  イエロー:
+    bed:
+      world: Glacier
+      x: 68.0
+      y: 81.0
+      z: 32.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: Glacier
+      x: 71.5
+      y: 81.0
+      z: 32.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: Glacier
+      x: 87.5
+      y: 81.0
+      z: 35.5
+      yaw: 87.010574
+      pitch: 0.0
+    upgradeShop:
+      world: Glacier
+      x: 87.5
+      y: 81.0
+      z: 29.5
+      yaw: 89.56571
+      pitch: 0.0
+    territoryRadius: 17
+    ironGenerator:
+      world: Glacier
+      x: 86.5
+      y: 81.0
+      z: 32.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: Glacier
+      x: 86.5
+      y: 81.0
+      z: 32.5
+      yaw: 0.0
+      pitch: 0.0
+  グリーン:
+    bed:
+      world: Glacier
+      x: 68.0
+      y: 81.0
+      z: -32.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: Glacier
+      x: 71.5
+      y: 81.0
+      z: -31.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: Glacier
+      x: 87.5
+      y: 81.0
+      z: -28.5
+      yaw: 87.65617
+      pitch: 0.0
+    upgradeShop:
+      world: Glacier
+      x: 87.5
+      y: 81.0
+      z: -34.5
+      yaw: 89.72717
+      pitch: 0.0
+    territoryRadius: 15
+    ironGenerator:
+      world: Glacier
+      x: 86.5
+      y: 81.0
+      z: -31.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: Glacier
+      x: 86.5
+      y: 81.0
+      z: -31.5
+      yaw: 0.0
+      pitch: 0.0
+  ブルー:
+    bed:
+      world: Glacier
+      x: 32.0
+      y: 81.0
+      z: -68.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: Glacier
+      x: 32.5
+      y: 81.0
+      z: -70.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: Glacier
+      x: 35.5
+      y: 81.0
+      z: -86.5
+      yaw: 1.7881907
+      pitch: 0.0
+    upgradeShop:
+      world: Glacier
+      x: 29.5
+      y: 81.0
+      z: -86.5
+      yaw: -2.8724113
+      pitch: 0.0
+    territoryRadius: 15
+    ironGenerator:
+      world: Glacier
+      x: 32.5
+      y: 81.0
+      z: -85.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: Glacier
+      x: 32.5
+      y: 81.0
+      z: -85.5
+      yaw: 0.0
+      pitch: 0.0
+  レッド:
+    bed:
+      world: Glacier
+      x: -32.0
+      y: 81.0
+      z: -68.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: Glacier
+      x: -31.5
+      y: 81.0
+      z: -70.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: Glacier
+      x: -28.5
+      y: 81.0
+      z: -86.5
+      yaw: -0.075315855
+      pitch: 0.0
+    upgradeShop:
+      world: Glacier
+      x: -34.5
+      y: 81.0
+      z: -86.5
+      yaw: 1.67814
+      pitch: 0.0
+    territoryRadius: 15
+    ironGenerator:
+      world: Glacier
+      x: -31.5
+      y: 81.0
+      z: -85.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: Glacier
+      x: -31.5
+      y: 81.0
+      z: -85.5
+      yaw: 0.0
+      pitch: 0.0
+  グレー:
+    bed:
+      world: Glacier
+      x: -68.0
+      y: 81.0
+      z: -32.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: Glacier
+      x: -70.5
+      y: 81.0
+      z: -31.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: Glacier
+      x: -86.5
+      y: 81.0
+      z: -34.5
+      yaw: -91.56277
+      pitch: 0.0
+    upgradeShop:
+      world: Glacier
+      x: -86.5
+      y: 81.0
+      z: -28.5
+      yaw: -89.41447
+      pitch: 0.0
+    territoryRadius: 15
+    ironGenerator:
+      world: Glacier
+      x: -85.5
+      y: 81.0
+      z: -31.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: Glacier
+      x: -85.5
+      y: 81.0
+      z: -31.5
+      yaw: 0.0
+      pitch: 0.0
+  ピンク:
+    bed:
+      world: Glacier
+      x: -68.0
+      y: 81.0
+      z: 32.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: Glacier
+      x: -70.5
+      y: 81.0
+      z: 32.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: Glacier
+      x: -86.5
+      y: 81.0
+      z: 29.5
+      yaw: -92.294945
+      pitch: 0.0
+    upgradeShop:
+      world: Glacier
+      x: -86.5
+      y: 81.0
+      z: 35.5
+      yaw: -94.64274
+      pitch: 0.0
+    territoryRadius: 15
+    ironGenerator:
+      world: Glacier
+      x: -85.5
+      y: 81.0
+      z: 32.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: Glacier
+      x: -85.5
+      y: 81.0
+      z: 32.5
+      yaw: 0.0
+      pitch: 0.0
+  ホワイト:
+    bed:
+      world: Glacier
+      x: -32.0
+      y: 81.0
+      z: 68.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: Glacier
+      x: -31.5
+      y: 81.0
+      z: 71.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: Glacier
+      x: -34.5
+      y: 81.0
+      z: 87.5
+      yaw: 177.93756
+      pitch: 0.0
+    upgradeShop:
+      world: Glacier
+      x: -28.5
+      y: 81.0
+      z: 87.5
+      yaw: 176.41792
+      pitch: 0.0
+    territoryRadius: 15
+    ironGenerator:
+      world: Glacier
+      x: -31.5
+      y: 81.0
+      z: 86.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: Glacier
+      x: -31.5
+      y: 81.0
+      z: 86.5
+      yaw: 0.0
+      pitch: 0.0
+generators:
+  共通_diamond_1768659707500:
+    teamName: 共通
+    material: diamond
+    spawnInterval: 700
+    corner1:
+      world: Glacier
+      x: 0.0
+      y: 79.0
+      z: 50.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: Glacier
+      x: 0.0
+      y: 79.0
+      z: 50.0
+      yaw: 0.0
+      pitch: 0.0
+  共通_diamond_1768659718250:
+    teamName: 共通
+    material: diamond
+    spawnInterval: 700
+    corner1:
+      world: Glacier
+      x: 50.0
+      y: 79.0
+      z: 0.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: Glacier
+      x: 50.0
+      y: 79.0
+      z: 0.0
+      yaw: 0.0
+      pitch: 0.0
+  共通_diamond_1768659726298:
+    teamName: 共通
+    material: diamond
+    spawnInterval: 700
+    corner1:
+      world: Glacier
+      x: 0.0
+      y: 79.0
+      z: -50.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: Glacier
+      x: 0.0
+      y: 79.0
+      z: -50.0
+      yaw: 0.0
+      pitch: 0.0
+  共通_diamond_1768659733244:
+    teamName: 共通
+    material: diamond
+    spawnInterval: 700
+    corner1:
+      world: Glacier
+      x: -50.0
+      y: 79.0
+      z: 0.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: Glacier
+      x: -50.0
+      y: 79.0
+      z: 0.0
+      yaw: 0.0
+      pitch: 0.0
+  共通_emerald_1768659740348:
+    teamName: 共通
+    material: emerald
+    spawnInterval: 3600
+    corner1:
+      world: Glacier
+      x: -20.0
+      y: 78.0
+      z: 20.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: Glacier
+      x: -20.0
+      y: 78.0
+      z: 20.0
+      yaw: 0.0
+      pitch: 0.0
+  共通_emerald_1768659747899:
+    teamName: 共通
+    material: emerald
+    spawnInterval: 3600
+    corner1:
+      world: Glacier
+      x: 20.0
+      y: 78.0
+      z: 20.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: Glacier
+      x: 20.0
+      y: 78.0
+      z: 20.0
+      yaw: 0.0
+      pitch: 0.0
+  共通_emerald_1768659754644:
+    teamName: 共通
+    material: emerald
+    spawnInterval: 3600
+    corner1:
+      world: Glacier
+      x: 20.0
+      y: 78.0
+      z: -20.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: Glacier
+      x: 20.0
+      y: 78.0
+      z: -20.0
+      yaw: 0.0
+      pitch: 0.0
+  共通_emerald_1768659762042:
+    teamName: 共通
+    material: emerald
+    spawnInterval: 3600
+    corner1:
+      world: Glacier
+      x: -20.0
+      y: 78.0
+      z: -20.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: Glacier
+      x: -20.0
+      y: 78.0
+      z: -20.0
+      yaw: 0.0
+      pitch: 0.0
+shops: {}
+upgradeShops: {}

@@ -1,0 +1,54 @@
+{
+  "type": "imageframe:url_static",
+  "index": 7,
+  "name": "photo8",
+  "url": "https://media.discordapp.net/attachments/1052211179281465395/1459185386382168239/image.png?ex\u003d69625bca\u0026is\u003d69610a4a\u0026hm\u003df4254a90f1f0887f65f1fd437826c506cd2848728ad85fc537202b8873372fc8\u0026\u003d\u0026format\u003dwebp\u0026quality\u003dlossless",
+  "width": 4,
+  "height": 2,
+  "ditheringType": "nearest-color",
+  "creator": "bc8069af-a431-490c-9659-7b85d41933d2",
+  "hasAccess": {},
+  "creationTime": 1767967430659,
+  "mapdata": [
+    {
+      "mapid": 68,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 69,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 70,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 71,
+      "image": "3.png",
+      "markers": []
+    },
+    {
+      "mapid": 72,
+      "image": "4.png",
+      "markers": []
+    },
+    {
+      "mapid": 73,
+      "image": "5.png",
+      "markers": []
+    },
+    {
+      "mapid": 74,
+      "image": "6.png",
+      "markers": []
+    },
+    {
+      "mapid": 75,
+      "image": "7.png",
+      "markers": []
+    }
+  ]
+}

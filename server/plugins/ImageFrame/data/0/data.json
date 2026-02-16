@@ -1,0 +1,94 @@
+{
+  "type": "imageframe:url_static",
+  "index": 0,
+  "name": "myphoto",
+  "url": "https://ca.slack-edge.com/T04V7DV7D6Z-U0520CD5MAB-4439ac4ef2e4-512",
+  "width": 4,
+  "height": 4,
+  "ditheringType": "nearest-color",
+  "creator": "bc8069af-a431-490c-9659-7b85d41933d2",
+  "hasAccess": {},
+  "creationTime": 1767963523575,
+  "mapdata": [
+    {
+      "mapid": 0,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 1,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 2,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 3,
+      "image": "3.png",
+      "markers": []
+    },
+    {
+      "mapid": 4,
+      "image": "4.png",
+      "markers": []
+    },
+    {
+      "mapid": 5,
+      "image": "5.png",
+      "markers": []
+    },
+    {
+      "mapid": 6,
+      "image": "6.png",
+      "markers": []
+    },
+    {
+      "mapid": 7,
+      "image": "7.png",
+      "markers": []
+    },
+    {
+      "mapid": 8,
+      "image": "8.png",
+      "markers": []
+    },
+    {
+      "mapid": 9,
+      "image": "9.png",
+      "markers": []
+    },
+    {
+      "mapid": 10,
+      "image": "10.png",
+      "markers": []
+    },
+    {
+      "mapid": 11,
+      "image": "11.png",
+      "markers": []
+    },
+    {
+      "mapid": 12,
+      "image": "12.png",
+      "markers": []
+    },
+    {
+      "mapid": 13,
+      "image": "13.png",
+      "markers": []
+    },
+    {
+      "mapid": 14,
+      "image": "14.png",
+      "markers": []
+    },
+    {
+      "mapid": 15,
+      "image": "15.png",
+      "markers": []
+    }
+  ]
+}

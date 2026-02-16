@@ -1,0 +1,766 @@
+villagers:
+  5c92be35-a25c-4dcf-a1b0-15bfad20e918:
+    type: shop1
+    team: アクア
+    world: map_airshow
+    x: 35.5
+    y: 63.0
+    z: 84.5
+    yaw: -89.889854
+    pitch: 0.0
+  d2ecbc7a-46aa-4350-9e21-5bea523f4630:
+    type: shop2
+    team: アクア
+    world: map_airshow
+    x: 45.5
+    y: 63.0
+    z: 84.5
+    yaw: 87.83264
+    pitch: 0.0
+  4ef38fdf-96a1-4b8b-9273-cd619e77ccb0:
+    type: shop1
+    team: イエロー
+    world: map_airshow
+    x: 84.5
+    y: 63.0
+    z: 45.5
+    yaw: -178.8821
+    pitch: 0.0
+  176cbc9c-acda-467a-beaf-1e61e27bcb0e:
+    type: shop2
+    team: イエロー
+    world: map_airshow
+    x: 84.5
+    y: 63.0
+    z: 35.5
+    yaw: -4.3590784
+    pitch: 0.0
+  39475754-f3da-4ac6-adef-60f88cb26af9:
+    type: shop1
+    team: グリーン
+    world: map_airshow
+    x: 84.5
+    y: 67.0
+    z: -34.5
+    yaw: -176.56882
+    pitch: 0.0
+  ccaa9dcf-8f29-4547-95c6-2ede7d25ab75:
+    type: shop2
+    team: グリーン
+    world: map_airshow
+    x: 84.5
+    y: 67.0
+    z: -44.5
+    yaw: -2.9415565
+    pitch: 0.0
+  e6de669b-34e8-45b7-a381-a648eb84a356:
+    type: shop1
+    team: ブルー
+    world: map_airshow
+    x: 45.5
+    y: 67.0
+    z: -83.5
+    yaw: 87.84367
+    pitch: 0.0
+  fc5f5f56-58bc-4e3b-bc66-416958e805b3:
+    type: shop2
+    team: ブルー
+    world: map_airshow
+    x: 35.5
+    y: 67.0
+    z: -83.5
+    yaw: -89.95449
+    pitch: 0.0
+  e271ecf7-8bbc-471e-a071-cc85ba24ee48:
+    type: shop1
+    team: レッド
+    world: map_airshow
+    x: -34.5
+    y: 63.0
+    z: -83.5
+    yaw: 91.50916
+    pitch: 0.0
+  73b9e484-5e1d-4b47-82da-f8b7bf78dc8b:
+    type: shop2
+    team: レッド
+    world: map_airshow
+    x: -44.5
+    y: 63.0
+    z: -83.5
+    yaw: -90.14427
+    pitch: 0.0
+  4f29958d-9b0c-446f-8d28-88cd09fb0924:
+    type: shop1
+    team: グレー
+    world: map_airshow
+    x: -83.5
+    y: 63.0
+    z: -44.5
+    yaw: 0.20288382
+    pitch: 0.0
+  5da31214-0936-4743-8fc0-778def3b40ad:
+    type: shop2
+    team: グレー
+    world: map_airshow
+    x: -83.5
+    y: 63.0
+    z: -34.5
+    yaw: 178.59445
+    pitch: 0.0
+  48c23571-b11e-4f4f-a8e2-2a01a041e8e8:
+    type: shop1
+    team: ピンク
+    world: map_airshow
+    x: -83.5
+    y: 67.0
+    z: 35.5
+    yaw: 2.6153722
+    pitch: 0.0
+  1470b743-c46a-4d39-b26d-54d79436e17c:
+    type: shop2
+    team: ピンク
+    world: map_airshow
+    x: -83.5
+    y: 67.0
+    z: 45.5
+    yaw: 179.03006
+    pitch: 0.0
+  a4f8f733-d6f3-4e6c-8cd7-cc8088a51e89:
+    type: shop1
+    team: ホワイト
+    world: map_airshow
+    x: -44.5
+    y: 67.0
+    z: 84.5
+    yaw: -92.332085
+    pitch: 0.0
+  010c2ae9-0547-4ffd-a479-6e8c7ce0a743:
+    type: shop2
+    team: ホワイト
+    world: map_airshow
+    x: -34.5
+    y: 67.0
+    z: 84.5
+    yaw: 86.75937
+    pitch: 0.0
+  8bf978f0-5dc1-4189-8b66-ea16cd398e2c:
+    type: shop1
+    team: アクア
+    world: map_glacier
+    x: 29.5
+    y: 81.0
+    z: 87.5
+    yaw: 175.3783
+    pitch: 0.0
+  df2d196f-3277-438b-afa4-594882e91639:
+    type: shop2
+    team: アクア
+    world: map_glacier
+    x: 35.5
+    y: 81.0
+    z: 87.5
+    yaw: 177.49055
+    pitch: 0.0
+  af5d78c2-4e11-47c7-aaf0-f3a5497f7e49:
+    type: shop2
+    team: アクア
+    world: map_glacier
+    x: 35.5
+    y: 81.0
+    z: 87.5
+    yaw: 177.70076
+    pitch: 0.0
+  d186a0ff-288d-42ae-8a3c-a33266637986:
+    type: shop2
+    team: アクア
+    world: map_glacier
+    x: 35.5
+    y: 81.0
+    z: 87.5
+    yaw: 178.70627
+    pitch: 0.0
+  c2947a9a-014f-43e8-ae3e-e9de385f8cde:
+    type: shop1
+    team: イエロー
+    world: map_glacier
+    x: 87.5
+    y: 81.0
+    z: 35.5
+    yaw: 87.010574
+    pitch: 0.0
+  b4726a07-28c7-40c2-9657-ea8b114616a6:
+    type: shop2
+    team: イエロー
+    world: map_glacier
+    x: 87.5
+    y: 81.0
+    z: 29.5
+    yaw: 89.56571
+    pitch: 0.0
+  72d3b924-f911-4825-8182-c2a5f9287b59:
+    type: shop1
+    team: グリーン
+    world: map_glacier
+    x: 87.5
+    y: 81.0
+    z: -28.5
+    yaw: 87.65617
+    pitch: 0.0
+  951f2932-722d-452e-9c79-174143cd8b31:
+    type: shop2
+    team: グリーン
+    world: map_glacier
+    x: 87.5
+    y: 81.0
+    z: -34.5
+    yaw: 89.72717
+    pitch: 0.0
+  6d2f4940-0c35-4608-a259-cba0ba0786dc:
+    type: shop1
+    team: ブルー
+    world: map_glacier
+    x: 35.5
+    y: 81.0
+    z: -86.5
+    yaw: 1.7881907
+    pitch: 0.0
+  b4d4ab04-a702-47a6-866c-00a5b42c79d2:
+    type: shop2
+    team: ブルー
+    world: map_glacier
+    x: 29.5
+    y: 81.0
+    z: -86.5
+    yaw: -2.8724113
+    pitch: 0.0
+  27d83184-08c1-493f-a5dc-399ca2ad72d5:
+    type: shop1
+    team: レッド
+    world: map_glacier
+    x: -28.5
+    y: 81.0
+    z: -86.5
+    yaw: -0.075315855
+    pitch: 0.0
+  1b57a1f6-04df-440e-acea-16b48173a133:
+    type: shop2
+    team: レッド
+    world: map_glacier
+    x: -34.5
+    y: 81.0
+    z: -86.5
+    yaw: 1.67814
+    pitch: 0.0
+  80ce894c-dc4d-4ae4-9b83-9900055d4645:
+    type: shop1
+    team: グレー
+    world: map_glacier
+    x: -86.5
+    y: 81.0
+    z: -34.5
+    yaw: -91.56277
+    pitch: 0.0
+  6a90441c-4452-4a97-98cd-6548bdfd44f4:
+    type: shop2
+    team: グレー
+    world: map_glacier
+    x: -86.5
+    y: 81.0
+    z: -28.5
+    yaw: -89.41447
+    pitch: 0.0
+  c81038d9-a3f3-4dc3-817a-b44fbce6559c:
+    type: shop1
+    team: ピンク
+    world: map_glacier
+    x: -86.5
+    y: 81.0
+    z: 29.5
+    yaw: -92.294945
+    pitch: 0.0
+  40c2c4ea-6dfe-485f-b77a-7d438b3fd5f8:
+    type: shop2
+    team: ピンク
+    world: map_glacier
+    x: -86.5
+    y: 81.0
+    z: 35.5
+    yaw: -94.64274
+    pitch: 0.0
+  6ae8c892-9be7-4b2c-8b3f-33512ec92a94:
+    type: shop1
+    team: ホワイト
+    world: map_glacier
+    x: -34.5
+    y: 81.0
+    z: 87.5
+    yaw: 177.93756
+    pitch: 0.0
+  c5ae70bc-d6fe-4be9-b6d2-dd45e49d9d22:
+    type: shop2
+    team: ホワイト
+    world: map_glacier
+    x: -28.5
+    y: 81.0
+    z: 87.5
+    yaw: 176.41792
+    pitch: 0.0
+  d2cb6825-dd41-4eba-a8e4-94cff7a53699:
+    type: shop1
+    team: アクア
+    world: map_lighthouse
+    x: 23.5
+    y: 65.0
+    z: 89.5
+    yaw: -88.22939
+    pitch: 0.0
+  bf5e3a8b-0801-486a-937d-0a76400dc2dc:
+    type: shop2
+    team: アクア
+    world: map_lighthouse
+    x: 34.5
+    y: 65.0
+    z: 89.5
+    yaw: 91.35386
+    pitch: 0.0
+  d7c67357-eb0d-48f3-99fd-b552b256d680:
+    type: shop2
+    team: アクア
+    world: map_lighthouse
+    x: 34.5
+    y: 65.0
+    z: 89.5
+    yaw: 93.50547
+    pitch: 0.0
+  bf8a1f85-1bf5-4f04-a13f-e12b7068d19c:
+    type: shop1
+    team: イエロー
+    world: map_lighthouse
+    x: 92.5
+    y: 65.0
+    z: 32.5
+    yaw: 177.9383
+    pitch: 0.0
+  98ca589d-73fb-4505-81a4-54528aa4f66c:
+    type: shop2
+    team: イエロー
+    world: map_lighthouse
+    x: 92.5
+    y: 65.0
+    z: 21.5
+    yaw: -2.0148304
+    pitch: 0.0
+  2cd6004f-d0c4-4c9b-a159-e40646d8755a:
+    type: shop1
+    team: グリーン
+    world: map_lighthouse
+    x: 92.5
+    y: 65.0
+    z: -19.5
+    yaw: 177.58328
+    pitch: 0.0
+  3405a414-3cbf-4abb-bb40-7e1bd4fa5498:
+    type: shop2
+    team: グリーン
+    world: map_lighthouse
+    x: 92.5
+    y: 65.0
+    z: -30.5
+    yaw: -1.873322
+    pitch: 0.0
+  c18fe5e0-a5d5-4451-b66f-b0cb8407be22:
+    type: shop1
+    team: ブルー
+    world: map_lighthouse
+    x: 35.5
+    y: 65.0
+    z: -88.5
+    yaw: 90.20592
+    pitch: 0.0
+  2b50deef-e2e3-4e0c-b0af-7f9ada6272ab:
+    type: shop2
+    team: ブルー
+    world: map_lighthouse
+    x: 24.5
+    y: 65.0
+    z: -88.5
+    yaw: -87.51995
+    pitch: 0.0
+  81fb55ea-2648-4e80-ae26-0acaa06cc2b2:
+    type: shop1
+    team: レッド
+    world: map_lighthouse
+    x: -16.5
+    y: 65.0
+    z: -88.5
+    yaw: 85.681564
+    pitch: 0.0
+  e76e5dfd-83e4-4aec-b426-3d0117b1c045:
+    type: shop2
+    team: レッド
+    world: map_lighthouse
+    x: -27.5
+    y: 65.0
+    z: -88.5
+    yaw: -90.40052
+    pitch: 0.0
+  886ad929-00e7-430f-9432-e3df17d4629f:
+    type: shop1
+    team: グレー
+    world: map_lighthouse
+    x: -85.5
+    y: 65.0
+    z: -31.5
+    yaw: 0.74090064
+    pitch: 0.0
+  5f668284-6d1c-463f-841c-18ff0f1e0ac0:
+    type: shop2
+    team: グレー
+    world: map_lighthouse
+    x: -85.5
+    y: 65.0
+    z: -20.5
+    yaw: 175.43141
+    pitch: 0.0
+  13c50714-66cc-46f5-b9d4-2213a2b58311:
+    type: shop1
+    team: ピンク
+    world: map_lighthouse
+    x: -85.5
+    y: 65.0
+    z: 20.5
+    yaw: -0.7423246
+    pitch: 0.0
+  1296f46d-6ff6-48f0-876e-4c82be24c9c7:
+    type: shop2
+    team: ピンク
+    world: map_lighthouse
+    x: -85.5
+    y: 65.0
+    z: 31.5
+    yaw: -177.36871
+    pitch: 0.0
+  29336683-c022-47f7-aa39-c020f6cb6991:
+    type: shop1
+    team: ホワイト
+    world: map_lighthouse
+    x: -28.5
+    y: 65.0
+    z: 89.5
+    yaw: -93.740906
+    pitch: 0.0
+  fc256901-f5e6-486e-a8aa-e3f942740d38:
+    type: shop2
+    team: ホワイト
+    world: map_lighthouse
+    x: -17.5
+    y: 65.0
+    z: 89.5
+    yaw: 93.501144
+    pitch: 0.0
+  6c834138-763a-4cef-8577-f1647886afda:
+    type: shop2
+    team: アクア
+    world: map_airshow
+    x: 45.5
+    y: 63.0
+    z: 84.5
+    yaw: 92.42678
+    pitch: 0.0
+  24fa15cc-7c3a-4b88-8424-2f2a59fd24a6:
+    type: shop1
+    team: レッド
+    world: map_nutcracker
+    x: -29.5
+    y: 74.0
+    z: -86.5
+    yaw: 92.243835
+    pitch: 0.0
+  7617f4bf-468f-4ae9-bab0-15fccb95455d:
+    type: shop2
+    team: レッド
+    world: map_nutcracker
+    x: -41.5
+    y: 74.0
+    z: -86.5
+    yaw: -90.86038
+    pitch: 0.0
+  3baa8122-6fd1-42af-b1a1-f1bada99f4c8:
+    type: shop2
+    team: レッド
+    world: map_nutcracker
+    x: -41.5
+    y: 74.0
+    z: -86.5
+    yaw: -90.3507
+    pitch: 0.0
+  e63c9e76-6130-44db-96ac-55f79ff9290e:
+    type: shop1
+    team: グレー
+    world: map_nutcracker
+    x: -86.5
+    y: 74.0
+    z: -41.5
+    yaw: -2.2608445
+    pitch: 0.0
+  aec98d83-dd2e-45de-8be9-976176e84a80:
+    type: shop2
+    team: グレー
+    world: map_nutcracker
+    x: -86.5
+    y: 74.0
+    z: -29.5
+    yaw: -178.84094
+    pitch: 0.0
+  64fe6af4-e9cf-423d-9319-ae0b9c39c3a0:
+    type: shop1
+    team: ピンク
+    world: map_nutcracker
+    x: -86.5
+    y: 74.0
+    z: 30.5
+    yaw: -3.6076152
+    pitch: 0.0
+  66329cb6-fae1-41e5-93e7-a67991eb87cc:
+    type: shop2
+    team: ピンク
+    world: map_nutcracker
+    x: -86.5
+    y: 74.0
+    z: 42.5
+    yaw: 176.63
+    pitch: 0.0
+  140f93a5-17c8-4e12-ab4b-680fc4b10c1f:
+    type: shop1
+    team: ホワイト
+    world: map_nutcracker
+    x: -41.5
+    y: 74.0
+    z: 87.5
+    yaw: -92.00135
+    pitch: 0.0
+  fc182ca7-549e-4dcd-b865-913b97d361b4:
+    type: shop2
+    team: ホワイト
+    world: map_nutcracker
+    x: -29.5
+    y: 74.0
+    z: 87.5
+    yaw: 86.06642
+    pitch: 0.0
+  025452e6-7a7a-4a2c-8b9e-3b63f94940b6:
+    type: shop1
+    team: アクア
+    world: map_nutcracker
+    x: 30.5
+    y: 74.0
+    z: 87.5
+    yaw: -91.46566
+    pitch: 0.0
+  11e4b6d2-686a-4aca-9448-9b510c2f3385:
+    type: shop2
+    team: アクア
+    world: map_nutcracker
+    x: 42.5
+    y: 74.0
+    z: 87.5
+    yaw: 91.259926
+    pitch: 0.0
+  5acf024a-ed48-4b48-8087-a154c647900c:
+    type: shop1
+    team: イエロー
+    world: map_nutcracker
+    x: 87.5
+    y: 74.0
+    z: 42.5
+    yaw: 179.86201
+    pitch: 0.0
+  e9fc2603-3b8f-43ac-8806-1465849ec7db:
+    type: shop2
+    team: イエロー
+    world: map_nutcracker
+    x: 87.5
+    y: 74.0
+    z: 30.5
+    yaw: -1.6602173
+    pitch: 0.0
+  92b8ec37-3956-4e7b-860f-e5a941d03a86:
+    type: shop1
+    team: グリーン
+    world: map_nutcracker
+    x: 87.5
+    y: 74.0
+    z: -29.5
+    yaw: 173.96358
+    pitch: 0.0
+  becf194d-169e-409e-8f99-ece456aeec5a:
+    type: shop2
+    team: グリーン
+    world: map_nutcracker
+    x: 87.5
+    y: 74.0
+    z: -41.5
+    yaw: -5.169608
+    pitch: 0.0
+  4e2775a8-85df-4d7b-ac31-2c4900b6274c:
+    type: shop1
+    team: ブルー
+    world: map_nutcracker
+    x: 42.5
+    y: 74.0
+    z: -86.5
+    yaw: 94.00964
+    pitch: 0.0
+  be3bcc1d-c3f1-468a-98f5-69ddf4bd23d4:
+    type: shop2
+    team: ブルー
+    world: map_nutcracker
+    x: 30.5
+    y: 74.0
+    z: -86.5
+    yaw: -86.63144
+    pitch: 0.0
+  27bcb824-8740-4b35-b8b2-1e4711018147:
+    type: shop1
+    team: アクア
+    world: world
+    x: 24.5
+    y: 72.0
+    z: 98.5
+    yaw: 267.9925
+    pitch: 0.0
+  dd82e9ab-d6bb-40a6-813b-39e9710539f8:
+    type: shop1
+    team: ホワイト
+    world: world
+    x: -35.5
+    y: 72.0
+    z: 98.5
+    yaw: 269.28143
+    pitch: 0.0
+  a07eb1ad-efd5-4fae-94a6-719038d14038:
+    type: shop1
+    team: ピンク
+    world: world
+    x: -97.5
+    y: 72.0
+    z: 24.5
+    yaw: 0.35377502
+    pitch: 0.0
+  bbf481ab-1628-4f67-9146-d2e658a3fe97:
+    type: shop1
+    team: グレー
+    world: world
+    x: -97.5
+    y: 72.0
+    z: -35.5
+    yaw: 358.92926
+    pitch: 0.0
+  456b149e-f797-4252-8d16-6a0a1bf77584:
+    type: shop1
+    team: レッド
+    world: world
+    x: -23.5
+    y: 72.0
+    z: -97.5
+    yaw: 89.36458
+    pitch: 0.0
+  7d302286-f3c8-4d8a-bca7-0ab777ed3796:
+    type: shop1
+    team: ブルー
+    world: world
+    x: 36.5
+    y: 72.0
+    z: -97.5
+    yaw: 89.54663
+    pitch: 0.0
+  ac764823-2dc8-4f3c-b1f4-07a4bd8d5729:
+    type: shop1
+    team: グリーン
+    world: world
+    x: 98.5
+    y: 72.0
+    z: -23.5
+    yaw: 179.10272
+    pitch: 0.0
+  f00326fc-44a8-4856-9c8d-7c2e6b8e192d:
+    type: shop1
+    team: イエロー
+    world: world
+    x: 98.5
+    y: 72.0
+    z: 36.5
+    yaw: 178.35757
+    pitch: 0.0
+  a85101a8-4ad9-4d7e-80fc-0c348063813a:
+    type: shop2
+    team: アクア
+    world: world
+    x: 36.5
+    y: 72.0
+    z: 98.5
+    yaw: 88.387115
+    pitch: 0.0
+  dc77584b-a18e-4345-a1c6-3e4311b30ae6:
+    type: shop2
+    team: ホワイト
+    world: world
+    x: -23.5
+    y: 72.0
+    z: 98.5
+    yaw: 87.165955
+    pitch: 0.0
+  60624961-2be9-499c-af6e-d3f23339245b:
+    type: shop2
+    team: ピンク
+    world: world
+    x: -97.5
+    y: 72.0
+    z: 36.5
+    yaw: 180.3415
+    pitch: 0.0
+  a918babb-0167-4a86-8855-c48e51f33e23:
+    type: shop2
+    team: グレー
+    world: world
+    x: -97.5
+    y: 72.0
+    z: -23.5
+    yaw: 177.89941
+    pitch: 0.0
+  d74d8ec7-7642-400f-83db-bdf8223a8445:
+    type: shop2
+    team: レッド
+    world: world
+    x: -35.5
+    y: 72.0
+    z: -97.5
+    yaw: 270.8449
+    pitch: 0.0
+  11786a14-471d-457c-bfc2-4fcd75a89496:
+    type: shop2
+    team: ブルー
+    world: world
+    x: 24.5
+    y: 72.0
+    z: -97.5
+    yaw: 266.95636
+    pitch: 0.0
+  ff76cd13-b272-47c3-99c1-24c7b160c648:
+    type: shop2
+    team: グリーン
+    world: world
+    x: 98.5
+    y: 72.0
+    z: -35.5
+    yaw: 359.7008
+    pitch: 0.0
+  527e8621-c0f0-493d-bbea-ee63f3edd6c6:
+    type: shop2
+    team: イエロー
+    world: world
+    x: 98.5
+    y: 72.0
+    z: 24.5
+    yaw: 358.8214
+    pitch: 0.0

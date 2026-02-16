@@ -1,0 +1,517 @@
+displayName: airshow
+worldFolder: Airshow
+enabled: true
+setupComplete: true
+endMode:
+  borderSize: 234.0
+  centerX: 0.0
+  centerZ: 0.0
+  shrinkSpeed: 1.0
+  finalSize: 10.0
+lobbySpawn:
+  world: Airshow
+  x: 0.4803446445260481
+  y: 118.0
+  z: 1.6054272429900815
+  yaw: 0.9592285
+  pitch: 4.3798947
+teams:
+  アクア:
+    bed:
+      world: Airshow
+      x: 40.0
+      y: 63.0
+      z: 75.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: Airshow
+      x: 40.5
+      y: 63.0
+      z: 78.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: Airshow
+      x: 35.5
+      y: 63.0
+      z: 84.5
+      yaw: -89.889854
+      pitch: 0.0
+    upgradeShop:
+      world: Airshow
+      x: 45.5
+      y: 63.0
+      z: 84.5
+      yaw: 92.42678
+      pitch: 0.0
+    territoryRadius: 15
+    ironGenerator:
+      world: Airshow
+      x: 40.5
+      y: 63.0
+      z: 87.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: Airshow
+      x: 40.5
+      y: 63.0
+      z: 87.5
+      yaw: 0.0
+      pitch: 0.0
+  イエロー:
+    bed:
+      world: Airshow
+      x: 75.0
+      y: 63.0
+      z: 40.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: Airshow
+      x: 79.5
+      y: 63.0
+      z: 40.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: Airshow
+      x: 84.5
+      y: 63.0
+      z: 45.5
+      yaw: -178.8821
+      pitch: 0.0
+    upgradeShop:
+      world: Airshow
+      x: 84.5
+      y: 63.0
+      z: 35.5
+      yaw: -4.3590784
+      pitch: 0.0
+    territoryRadius: 15
+    ironGenerator:
+      world: Airshow
+      x: 87.5
+      y: 63.0
+      z: 40.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: Airshow
+      x: 87.5
+      y: 63.0
+      z: 40.5
+      yaw: 0.0
+      pitch: 0.0
+  グリーン:
+    bed:
+      world: Airshow
+      x: 75.0
+      y: 67.0
+      z: -40.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: Airshow
+      x: 79.5
+      y: 67.0
+      z: -39.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: Airshow
+      x: 84.5
+      y: 67.0
+      z: -34.5
+      yaw: -176.56882
+      pitch: 0.0
+    upgradeShop:
+      world: Airshow
+      x: 84.5
+      y: 67.0
+      z: -44.5
+      yaw: -2.9415565
+      pitch: 0.0
+    territoryRadius: 15
+    ironGenerator:
+      world: Airshow
+      x: 87.5
+      y: 67.0
+      z: -39.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: Airshow
+      x: 87.5
+      y: 67.0
+      z: -39.5
+      yaw: 0.0
+      pitch: 0.0
+  ブルー:
+    bed:
+      world: Airshow
+      x: 40.0
+      y: 67.0
+      z: -75.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: Airshow
+      x: 40.5
+      y: 67.0
+      z: -78.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: Airshow
+      x: 45.5
+      y: 67.0
+      z: -83.5
+      yaw: 87.84367
+      pitch: 0.0
+    upgradeShop:
+      world: Airshow
+      x: 35.5
+      y: 67.0
+      z: -83.5
+      yaw: -89.95449
+      pitch: 0.0
+    territoryRadius: 15
+    ironGenerator:
+      world: Airshow
+      x: 40.5
+      y: 67.0
+      z: -86.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: Airshow
+      x: 40.5
+      y: 67.0
+      z: -86.5
+      yaw: 0.0
+      pitch: 0.0
+  レッド:
+    bed:
+      world: Airshow
+      x: -40.0
+      y: 63.0
+      z: -75.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: Airshow
+      x: -39.5
+      y: 63.0
+      z: -78.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: Airshow
+      x: -34.5
+      y: 63.0
+      z: -83.5
+      yaw: 91.50916
+      pitch: 0.0
+    upgradeShop:
+      world: Airshow
+      x: -44.5
+      y: 63.0
+      z: -83.5
+      yaw: -90.14427
+      pitch: 0.0
+    territoryRadius: 15
+    ironGenerator:
+      world: Airshow
+      x: -39.5
+      y: 63.0
+      z: -86.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: Airshow
+      x: -39.5
+      y: 63.0
+      z: -86.5
+      yaw: 0.0
+      pitch: 0.0
+  グレー:
+    bed:
+      world: Airshow
+      x: -75.0
+      y: 63.0
+      z: -40.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: Airshow
+      x: -78.5
+      y: 63.0
+      z: -39.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: Airshow
+      x: -83.5
+      y: 63.0
+      z: -44.5
+      yaw: 0.20288382
+      pitch: 0.0
+    upgradeShop:
+      world: Airshow
+      x: -83.5
+      y: 63.0
+      z: -34.5
+      yaw: 178.59445
+      pitch: 0.0
+    territoryRadius: 15
+    ironGenerator:
+      world: Airshow
+      x: -86.5
+      y: 63.0
+      z: -39.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: Airshow
+      x: -86.5
+      y: 63.0
+      z: -39.5
+      yaw: 0.0
+      pitch: 0.0
+  ピンク:
+    bed:
+      world: Airshow
+      x: -75.0
+      y: 67.0
+      z: 40.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: Airshow
+      x: -78.5
+      y: 67.0
+      z: 40.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: Airshow
+      x: -83.5
+      y: 67.0
+      z: 35.5
+      yaw: 2.6153722
+      pitch: 0.0
+    upgradeShop:
+      world: Airshow
+      x: -83.5
+      y: 67.0
+      z: 45.5
+      yaw: 179.03006
+      pitch: 0.0
+    territoryRadius: 15
+    ironGenerator:
+      world: Airshow
+      x: -86.5
+      y: 67.0
+      z: 40.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: Airshow
+      x: -86.5
+      y: 67.0
+      z: 40.5
+      yaw: 0.0
+      pitch: 0.0
+  ホワイト:
+    bed:
+      world: Airshow
+      x: -40.0
+      y: 67.0
+      z: 75.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: Airshow
+      x: -39.5
+      y: 67.0
+      z: 79.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: Airshow
+      x: -44.5
+      y: 67.0
+      z: 84.5
+      yaw: -92.332085
+      pitch: 0.0
+    upgradeShop:
+      world: Airshow
+      x: -34.5
+      y: 67.0
+      z: 84.5
+      yaw: 86.75937
+      pitch: 0.0
+    territoryRadius: 15
+    ironGenerator:
+      world: Airshow
+      x: -39.5
+      y: 67.0
+      z: 87.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: Airshow
+      x: -39.5
+      y: 67.0
+      z: 87.5
+      yaw: 0.0
+      pitch: 0.0
+generators:
+  共通_diamond_1768551892223:
+    teamName: 共通
+    material: diamond
+    spawnInterval: 700
+    corner1:
+      world: Airshow
+      x: 40.0
+      y: 60.0
+      z: 40.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: Airshow
+      x: 40.0
+      y: 60.0
+      z: 40.0
+      yaw: 0.0
+      pitch: 0.0
+  共通_diamond_1768551900166:
+    teamName: 共通
+    material: diamond
+    spawnInterval: 700
+    corner1:
+      world: Airshow
+      x: 40.0
+      y: 64.0
+      z: -40.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: Airshow
+      x: 40.0
+      y: 64.0
+      z: -40.0
+      yaw: 0.0
+      pitch: 0.0
+  共通_diamond_1768551908871:
+    teamName: 共通
+    material: diamond
+    spawnInterval: 700
+    corner1:
+      world: Airshow
+      x: -40.0
+      y: 60.0
+      z: -40.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: Airshow
+      x: -40.0
+      y: 60.0
+      z: -40.0
+      yaw: 0.0
+      pitch: 0.0
+  共通_diamond_1768551917873:
+    teamName: 共通
+    material: diamond
+    spawnInterval: 700
+    corner1:
+      world: Airshow
+      x: -40.0
+      y: 64.0
+      z: 40.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: Airshow
+      x: -40.0
+      y: 64.0
+      z: 40.0
+      yaw: 0.0
+      pitch: 0.0
+  共通_emerald_1768551925817:
+    teamName: 共通
+    material: emerald
+    spawnInterval: 3600
+    corner1:
+      world: Airshow
+      x: -12.0
+      y: 64.0
+      z: 12.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: Airshow
+      x: -12.0
+      y: 64.0
+      z: 12.0
+      yaw: 0.0
+      pitch: 0.0
+  共通_emerald_1768551930215:
+    teamName: 共通
+    material: emerald
+    spawnInterval: 3600
+    corner1:
+      world: Airshow
+      x: 12.0
+      y: 60.0
+      z: 12.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: Airshow
+      x: 12.0
+      y: 60.0
+      z: 12.0
+      yaw: 0.0
+      pitch: 0.0
+  共通_emerald_1768551935023:
+    teamName: 共通
+    material: emerald
+    spawnInterval: 3600
+    corner1:
+      world: Airshow
+      x: 12.0
+      y: 64.0
+      z: -12.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: Airshow
+      x: 12.0
+      y: 64.0
+      z: -12.0
+      yaw: 0.0
+      pitch: 0.0
+  共通_emerald_1768551940518:
+    teamName: 共通
+    material: emerald
+    spawnInterval: 3600
+    corner1:
+      world: Airshow
+      x: -12.0
+      y: 60.0
+      z: -12.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: Airshow
+      x: -12.0
+      y: 60.0
+      z: -12.0
+      yaw: 0.0
+      pitch: 0.0
+shops: {}
+upgradeShops: {}

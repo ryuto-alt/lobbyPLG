@@ -1,0 +1,8 @@
+displayName: サーキット
+worldFolder: Speedway
+enabled: true
+setupComplete: false
+teams: {}
+generators: {}
+shops: {}
+upgradeShops: {}

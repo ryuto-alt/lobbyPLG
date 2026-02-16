@@ -1,0 +1,517 @@
+displayName: くるみ割り人形
+worldFolder: NutCracker
+enabled: true
+setupComplete: true
+endMode:
+  borderSize: 234.0
+  centerX: 0.0
+  centerZ: 0.0
+  shrinkSpeed: 1.0
+  finalSize: 10.0
+lobbySpawn:
+  world: NutCracker
+  x: 0.5749201975725102
+  y: 143.0
+  z: 0.7859795981629124
+  yaw: 0.5588555
+  pitch: 0.55976826
+teams:
+  レッド:
+    bed:
+      world: NutCracker
+      x: -36.0
+      y: 73.0
+      z: -73.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: NutCracker
+      x: -35.5
+      y: 74.0
+      z: -80.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: NutCracker
+      x: -29.5
+      y: 74.0
+      z: -86.5
+      yaw: 92.243835
+      pitch: 0.0
+    upgradeShop:
+      world: NutCracker
+      x: -41.5
+      y: 74.0
+      z: -86.5
+      yaw: -90.3507
+      pitch: 0.0
+    territoryRadius: 18
+    ironGenerator:
+      world: NutCracker
+      x: -35.5
+      y: 74.0
+      z: -91.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: NutCracker
+      x: -35.5
+      y: 74.0
+      z: -91.5
+      yaw: 0.0
+      pitch: 0.0
+  グレー:
+    bed:
+      world: NutCracker
+      x: -73.0
+      y: 73.0
+      z: -36.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: NutCracker
+      x: -80.5
+      y: 74.0
+      z: -35.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: NutCracker
+      x: -86.5
+      y: 74.0
+      z: -41.5
+      yaw: -2.2608445
+      pitch: 0.0
+    upgradeShop:
+      world: NutCracker
+      x: -86.5
+      y: 74.0
+      z: -29.5
+      yaw: -178.84094
+      pitch: 0.0
+    territoryRadius: 18
+    ironGenerator:
+      world: NutCracker
+      x: -91.5
+      y: 74.0
+      z: -35.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: NutCracker
+      x: -91.5
+      y: 74.0
+      z: -35.5
+      yaw: 0.0
+      pitch: 0.0
+  ピンク:
+    bed:
+      world: NutCracker
+      x: -73.0
+      y: 73.0
+      z: 36.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: NutCracker
+      x: -80.5
+      y: 74.0
+      z: 36.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: NutCracker
+      x: -86.5
+      y: 74.0
+      z: 30.5
+      yaw: -3.6076152
+      pitch: 0.0
+    upgradeShop:
+      world: NutCracker
+      x: -86.5
+      y: 74.0
+      z: 42.5
+      yaw: 176.63
+      pitch: 0.0
+    territoryRadius: 18
+    ironGenerator:
+      world: NutCracker
+      x: -91.5
+      y: 74.0
+      z: 36.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: NutCracker
+      x: -91.5
+      y: 74.0
+      z: 36.5
+      yaw: 0.0
+      pitch: 0.0
+  ホワイト:
+    bed:
+      world: NutCracker
+      x: -36.0
+      y: 73.0
+      z: 73.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: NutCracker
+      x: -35.5
+      y: 74.0
+      z: 81.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: NutCracker
+      x: -41.5
+      y: 74.0
+      z: 87.5
+      yaw: -92.00135
+      pitch: 0.0
+    upgradeShop:
+      world: NutCracker
+      x: -29.5
+      y: 74.0
+      z: 87.5
+      yaw: 86.06642
+      pitch: 0.0
+    territoryRadius: 18
+    ironGenerator:
+      world: NutCracker
+      x: -35.5
+      y: 74.0
+      z: 92.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: NutCracker
+      x: -35.5
+      y: 74.0
+      z: 92.5
+      yaw: 0.0
+      pitch: 0.0
+  アクア:
+    bed:
+      world: NutCracker
+      x: 36.0
+      y: 73.0
+      z: 73.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: NutCracker
+      x: 36.5
+      y: 74.0
+      z: 81.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: NutCracker
+      x: 30.5
+      y: 74.0
+      z: 87.5
+      yaw: -91.46566
+      pitch: 0.0
+    upgradeShop:
+      world: NutCracker
+      x: 42.5
+      y: 74.0
+      z: 87.5
+      yaw: 91.259926
+      pitch: 0.0
+    territoryRadius: 18
+    ironGenerator:
+      world: NutCracker
+      x: 36.5
+      y: 74.0
+      z: 92.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: NutCracker
+      x: 36.5
+      y: 74.0
+      z: 92.5
+      yaw: 0.0
+      pitch: 0.0
+  イエロー:
+    bed:
+      world: NutCracker
+      x: 73.0
+      y: 73.0
+      z: 36.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: NutCracker
+      x: 81.5
+      y: 74.0
+      z: 36.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: NutCracker
+      x: 87.5
+      y: 74.0
+      z: 42.5
+      yaw: 179.86201
+      pitch: 0.0
+    upgradeShop:
+      world: NutCracker
+      x: 87.5
+      y: 74.0
+      z: 30.5
+      yaw: -1.6602173
+      pitch: 0.0
+    territoryRadius: 18
+    ironGenerator:
+      world: NutCracker
+      x: 92.5
+      y: 74.0
+      z: 36.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: NutCracker
+      x: 92.5
+      y: 74.0
+      z: 36.5
+      yaw: 0.0
+      pitch: 0.0
+  グリーン:
+    bed:
+      world: NutCracker
+      x: 73.0
+      y: 73.0
+      z: -36.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: NutCracker
+      x: 81.5
+      y: 74.0
+      z: -35.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: NutCracker
+      x: 87.5
+      y: 74.0
+      z: -29.5
+      yaw: 173.96358
+      pitch: 0.0
+    upgradeShop:
+      world: NutCracker
+      x: 87.5
+      y: 74.0
+      z: -41.5
+      yaw: -5.169608
+      pitch: 0.0
+    territoryRadius: 18
+    ironGenerator:
+      world: NutCracker
+      x: 92.5
+      y: 74.0
+      z: -35.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: NutCracker
+      x: 92.5
+      y: 74.0
+      z: -35.5
+      yaw: 0.0
+      pitch: 0.0
+  ブルー:
+    bed:
+      world: NutCracker
+      x: 36.0
+      y: 73.0
+      z: -73.0
+      yaw: 0.0
+      pitch: 0.0
+    spawn:
+      world: NutCracker
+      x: 36.5
+      y: 74.0
+      z: -80.5
+      yaw: 0.0
+      pitch: 0.0
+    shop:
+      world: NutCracker
+      x: 42.5
+      y: 74.0
+      z: -86.5
+      yaw: 94.00964
+      pitch: 0.0
+    upgradeShop:
+      world: NutCracker
+      x: 30.5
+      y: 74.0
+      z: -86.5
+      yaw: -86.63144
+      pitch: 0.0
+    territoryRadius: 18
+    ironGenerator:
+      world: NutCracker
+      x: 36.5
+      y: 74.0
+      z: -91.5
+      yaw: 0.0
+      pitch: 0.0
+    goldGenerator:
+      world: NutCracker
+      x: 36.5
+      y: 74.0
+      z: -91.5
+      yaw: 0.0
+      pitch: 0.0
+generators:
+  共通_diamond_1768664744442:
+    teamName: 共通
+    material: diamond
+    spawnInterval: 700
+    corner1:
+      world: NutCracker
+      x: -43.0
+      y: 68.0
+      z: -43.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: NutCracker
+      x: -43.0
+      y: 68.0
+      z: -43.0
+      yaw: 0.0
+      pitch: 0.0
+  共通_diamond_1768664751942:
+    teamName: 共通
+    material: diamond
+    spawnInterval: 700
+    corner1:
+      world: NutCracker
+      x: -43.0
+      y: 68.0
+      z: 43.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: NutCracker
+      x: -43.0
+      y: 68.0
+      z: 43.0
+      yaw: 0.0
+      pitch: 0.0
+  共通_diamond_1768664759692:
+    teamName: 共通
+    material: diamond
+    spawnInterval: 700
+    corner1:
+      world: NutCracker
+      x: 43.0
+      y: 68.0
+      z: 43.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: NutCracker
+      x: 43.0
+      y: 68.0
+      z: 43.0
+      yaw: 0.0
+      pitch: 0.0
+  共通_diamond_1768664767642:
+    teamName: 共通
+    material: diamond
+    spawnInterval: 700
+    corner1:
+      world: NutCracker
+      x: 43.0
+      y: 68.0
+      z: -43.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: NutCracker
+      x: 43.0
+      y: 68.0
+      z: -43.0
+      yaw: 0.0
+      pitch: 0.0
+  共通_emerald_1768664797592:
+    teamName: 共通
+    material: emerald
+    spawnInterval: 3600
+    corner1:
+      world: NutCracker
+      x: 0.0
+      y: 73.0
+      z: -18.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: NutCracker
+      x: 0.0
+      y: 73.0
+      z: -18.0
+      yaw: 0.0
+      pitch: 0.0
+  共通_emerald_1768664803291:
+    teamName: 共通
+    material: emerald
+    spawnInterval: 3600
+    corner1:
+      world: NutCracker
+      x: 0.0
+      y: 73.0
+      z: 18.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: NutCracker
+      x: 0.0
+      y: 73.0
+      z: 18.0
+      yaw: 0.0
+      pitch: 0.0
+  共通_emerald_1768664808692:
+    teamName: 共通
+    material: emerald
+    spawnInterval: 3600
+    corner1:
+      world: NutCracker
+      x: 13.0
+      y: 80.0
+      z: 0.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: NutCracker
+      x: 13.0
+      y: 80.0
+      z: 0.0
+      yaw: 0.0
+      pitch: 0.0
+  共通_emerald_1768664813645:
+    teamName: 共通
+    material: emerald
+    spawnInterval: 3600
+    corner1:
+      world: NutCracker
+      x: -13.0
+      y: 80.0
+      z: 0.0
+      yaw: 0.0
+      pitch: 0.0
+    corner2:
+      world: NutCracker
+      x: -13.0
+      y: 80.0
+      z: 0.0
+      yaw: 0.0
+      pitch: 0.0
+shops: {}
+upgradeShops: {}
